@@ -241,26 +241,32 @@ const en = {
   awards: {
     tag: "// 07 — Awards",
     title: "Glory & Prizes",
+    pool: {
+      label: "Monthly Prize Pool",
+      amount: "$1,000",
+      unit: "/ month",
+      note: "Low-barrier monthly format — small prizes, many winners, rewarding continued participation rather than only the top few.",
+    },
     mainTitle: "Main Technical Awards",
     main: [
-      { name: "Agent Master Builder", body: "The highest Final Score across official tracks — the season's strongest AI build overall.", badge: "Top Prize" },
-      { name: "Powerful but Brutal", body: "High-performance, high-cost brutalist machines. Brutality = Performance + Cost. Performance ≥ 70 to qualify.", badge: "Performance ≥ 70" },
-      { name: "Cheap Thrills", body: "Cheap, light, scrappy — but surprisingly effective. Thrift = Performance − 2 × Cost. Performance ≥ 60 to qualify.", badge: "Performance ≥ 60" },
+      { name: "Agent Master Builder", body: "The highest Final Score across official tracks — the season's strongest AI build overall.", badge: "Top Prize", prize: "$250" },
+      { name: "Powerful but Brutal", body: "High-performance, high-cost brutalist machines. Brutality = Performance + Cost. Performance ≥ 70 to qualify.", badge: "Performance ≥ 70", prize: "$100" },
+      { name: "Cheap Thrills", body: "Cheap, light, scrappy — but surprisingly effective. Thrift = Performance − 2 × Cost. Performance ≥ 60 to qualify.", badge: "Performance ≥ 60", prize: "$100" },
     ],
     titlesTitle: "Track Titles",
     titles: [
-      { name: "Best Build Autopilot", body: "Highest Final Score in the Autopilot track." },
-      { name: "Best Build Copilot", body: "Highest Final Score in the Copilot track." },
+      { name: "Best Build Autopilot", body: "Highest Final Score in the Autopilot track.", prize: "$150" },
+      { name: "Best Build Copilot", body: "Highest Final Score in the Copilot track.", prize: "$150" },
     ],
     dedupeTitle: "Prize De-duplication",
     dedupe:
       "One machine can hold multiple display titles but claims at most one major cash/physical prize. Priority: Agent Master Builder > Powerful but Brutal > Cheap Thrills > Best Track. Lower-priority prizes roll down to the next eligible entry.",
     communityTitle: "Community Awards",
     community: [
-      "Community Favorite",
-      "Most Creative Machine",
-      "Funniest Failure",
-      "Best Human Boss Build",
+      { name: "Most Creative Machine", prize: "$100" },
+      { name: "Funniest Failure", prize: "$75" },
+      { name: "Community Favorite", prize: "$75" },
+      { name: "Best Human Boss Build", prize: "Showcase" },
     ],
   },
   faq: {
@@ -518,26 +524,32 @@ const zh: Content = {
   awards: {
     tag: "// 07 — 奖项",
     title: "荣耀与奖励",
+    pool: {
+      label: "每月奖金池",
+      amount: "$1,000",
+      unit: "/ 月",
+      note: "低门槛月赛型——小额多奖、鼓励持续参与，让更多人提交，而不只奖励顶尖高手。",
+    },
     mainTitle: "主技术奖",
     main: [
-      { name: "Agent Master Builder", body: "正式赛道 Final Score 最高者——赛季综合最强 AI 建造作品。", badge: "最高荣誉" },
-      { name: "Powerful but Brutal", body: "高性能高成本的暴力美学。Brutality = Performance + Cost，Performance ≥ 70 方可参评。", badge: "Performance ≥ 70" },
-      { name: "Cheap Thrills", body: "便宜、轻量、简陋却意外好用。Thrift = Performance − 2 × Cost，Performance ≥ 60 方可参评。", badge: "Performance ≥ 60" },
+      { name: "Agent Master Builder", body: "正式赛道 Final Score 最高者——赛季综合最强 AI 建造作品。", badge: "最高荣誉", prize: "$250" },
+      { name: "Powerful but Brutal", body: "高性能高成本的暴力美学。Brutality = Performance + Cost，Performance ≥ 70 方可参评。", badge: "Performance ≥ 70", prize: "$100" },
+      { name: "Cheap Thrills", body: "便宜、轻量、简陋却意外好用。Thrift = Performance − 2 × Cost，Performance ≥ 60 方可参评。", badge: "Performance ≥ 60", prize: "$100" },
     ],
     titlesTitle: "赛道头衔",
     titles: [
-      { name: "Best Build Autopilot", body: "Autopilot 赛道 Final Score 最高的作品。" },
-      { name: "Best Build Copilot", body: "Copilot 赛道 Final Score 最高的作品。" },
+      { name: "Best Build Autopilot", body: "Autopilot 赛道 Final Score 最高的作品。", prize: "$150" },
+      { name: "Best Build Copilot", body: "Copilot 赛道 Final Score 最高的作品。", prize: "$150" },
     ],
     dedupeTitle: "奖项去重规则",
     dedupe:
       "同一作品可拥有多个展示 title，但最多领取一份主要奖金/实物。优先级：Agent Master Builder ＞ Powerful but Brutal ＞ Cheap Thrills ＞ Best Track；低优先级奖励顺延给下一名符合条件的作品。",
     communityTitle: "社区奖项",
     community: [
-      "Community Favorite",
-      "Most Creative Machine",
-      "Funniest Failure",
-      "Best Human Boss Build",
+      { name: "Most Creative Machine", prize: "$100" },
+      { name: "Funniest Failure", prize: "$75" },
+      { name: "Community Favorite", prize: "$75" },
+      { name: "Best Human Boss Build", prize: "展示奖" },
     ],
   },
   faq: {
