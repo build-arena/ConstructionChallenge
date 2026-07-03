@@ -6,7 +6,9 @@ import { LINKS } from "@/config/links"
 export function Hero() {
   const { t, lang } = useI18n()
   const h = t.hero
-  const mdFile = lang === "zh" ? "/BuildArena-Challenge-ZH.md" : "/BuildArena-Challenge-EN.md"
+  const mdFile =
+    import.meta.env.BASE_URL +
+    (lang === "zh" ? "BuildArena-Challenge-ZH.md" : "BuildArena-Challenge-EN.md")
 
   return (
     <section

@@ -54,7 +54,7 @@ export function CtaFooter() {
                 aria-label={o.organizer.affiliation}
               >
                 <img
-                  src={o.organizer.schoolLogo}
+                  src={import.meta.env.BASE_URL + o.organizer.schoolLogo}
                   alt={o.organizer.affiliation}
                   className="h-12 w-auto object-contain"
                 />
@@ -86,7 +86,7 @@ export function CtaFooter() {
                 aria-label={o.organizer.name}
               >
                 <img
-                  src={o.organizer.labLogo}
+                  src={import.meta.env.BASE_URL + o.organizer.labLogo}
                   alt={o.organizer.name}
                   className="h-14 w-auto object-contain"
                   style={{ filter: "brightness(0) invert(1)" }}
