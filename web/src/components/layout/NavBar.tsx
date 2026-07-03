@@ -18,8 +18,8 @@ const NAV_ITEMS = [
   { id: "tracks", key: "tracks" },
   { id: "how", key: "how" },
   { id: "scoring", key: "scoring" },
-  { id: "leaderboard", key: "leaderboard" },
   { id: "awards", key: "awards" },
+  { id: "leaderboard", key: "leaderboard" },
   { id: "faq", key: "faq" },
 ] as const
 

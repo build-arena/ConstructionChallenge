@@ -1,4 +1,4 @@
-import { Award, Crown, Sparkles, Coins } from "lucide-react"
+import { Award, Crown, Sparkles, Coins, GraduationCap, CheckCircle2 } from "lucide-react"
 import { Section, SectionHeading } from "@/components/layout/Section"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -64,13 +64,14 @@ export function Awards() {
       </div>
 
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
-        <div>
+        {/* Left: track titles — flex-1 cards fill equal halves of the column height */}
+        <div className="flex flex-col">
           <h3 className="mb-5 font-pixel text-[1.2rem] uppercase tracking-wider text-ba-orange">
             {a.titlesTitle}
           </h3>
-          <div className="space-y-4">
+          <div className="flex flex-1 flex-col gap-3">
             {a.titles.map((title) => (
-              <Card key={title.name} className="gap-1.5 p-5">
+              <Card key={title.name} className="flex-1 gap-1.5 p-5">
                 <div className="flex items-center justify-between gap-3">
                   <h4 className="text-base font-bold uppercase tracking-wide text-white">
                     {title.name}
@@ -85,11 +86,12 @@ export function Awards() {
           </div>
         </div>
 
-        <div>
+        {/* Right: community awards — 4-row grid fills the same column height */}
+        <div className="flex flex-col">
           <h3 className="mb-5 font-pixel text-[1.2rem] uppercase tracking-wider text-ba-orange">
             {a.communityTitle}
           </h3>
-          <div className="space-y-3">
+          <div className="grid flex-1 grid-rows-4 gap-3">
             {a.community.map((c) => (
               <div
                 key={c.name}
@@ -102,13 +104,43 @@ export function Awards() {
               </div>
             ))}
           </div>
-          <p className="mt-6 border-l-2 border-ba-orange bg-secondary/20 p-4 text-sm leading-relaxed text-mist">
-            <span className="font-bold uppercase text-paper">
-              {a.dedupeTitle}:{" "}
-            </span>
-            {a.dedupe}
-          </p>
         </div>
+      </div>
+
+      {/* De-duplication rule — full width below both columns */}
+      <p className="mt-4 border-l-2 border-ba-orange bg-secondary/20 p-4 text-sm leading-relaxed text-mist">
+        <span className="mb-1 block font-bold uppercase text-paper">
+          {a.dedupeTitle}
+        </span>
+        {a.dedupe}
+      </p>
+
+      {/* Academic co-authorship */}
+      <div className="mt-10 border-2 border-white/10 bg-secondary/20 p-6">
+        <div className="mb-4 flex items-center gap-3">
+          <GraduationCap className="size-6 shrink-0 text-ba-orange" />
+          <h3 className="font-pixel text-[1.2rem] uppercase tracking-wider text-ba-orange">
+            {a.academic.title}
+          </h3>
+          <Badge variant="accent" className="ml-auto">
+            {a.academic.badge}
+          </Badge>
+        </div>
+        <p className="mb-5 text-sm leading-relaxed text-mist">{a.academic.intro}</p>
+        <p className="mb-3 text-xs font-bold uppercase tracking-widest text-paper">
+          {a.academic.contributionsTitle}
+        </p>
+        <ul className="mb-5 space-y-2">
+          {a.academic.contributions.map((c) => (
+            <li key={c} className="flex items-start gap-2.5 text-sm text-mist">
+              <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-cyan/70" />
+              {c}
+            </li>
+          ))}
+        </ul>
+        <p className="border-l-2 border-white/20 pl-3 text-xs leading-relaxed text-mist/70">
+          {a.academic.adoptionNote}
+        </p>
       </div>
     </Section>
   )

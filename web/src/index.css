@@ -255,3 +255,11 @@
     background-size: 190px 160px, 230px 210px, 270px 190px, 310px 240px;
   }
 }
+
+/* Chinese text scaling compensation.
+   Ark Pixel 12px-zh and system CJK fonts render visually smaller than
+   their Latin counterparts at the same nominal size. Bumping the root
+   font-size when lang="zh" keeps perceived text weight consistent. */
+html:lang(zh) {
+  font-size: 100%;
+}

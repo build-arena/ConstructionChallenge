@@ -209,7 +209,7 @@ const en = {
     ctaSubmit: "Submit on Kaggle",
   },
   leaderboard: {
-    tag: "// 06 — Leaderboard",
+    tag: "// 07 — Leaderboard",
     title: "Season 1 Leaderboard",
     status: "Coming Soon",
     tabs: {
@@ -238,11 +238,11 @@ const en = {
     ],
     emptyTitle: "The arena is warming up",
     emptyBody:
-      "The leaderboard opens when Season 1 begins (2026.07). Submit on Kaggle to claim your spot.",
+      "The leaderboard opens when Season 1 begins (2026.07).\nSubmit on Kaggle to claim your spot.",
     provisional: "Provisional",
   },
   awards: {
-    tag: "// 07 — Awards",
+    tag: "// 06 — Awards",
     title: "Glory & Prizes",
     pool: {
       label: "Monthly Prize Pool",
@@ -270,6 +270,22 @@ const en = {
       { name: "Community Favorite", prize: "$75" },
       { name: "Best Human Boss Build", prize: "Showcase" },
     ],
+    academic: {
+      title: "Academic Co-Authorship",
+      badge: "Research Recognition",
+      intro:
+        "Share your work openly after the season.\nIf your contribution is adopted in a subsequent BuildArena academic publication, you will be invited as a co-author.",
+      contributionsTitle: "Qualifying contributions",
+      contributions: [
+        "Machine used as a benchmark case or ablation target",
+        "Agent workflow reproduced or analyzed as an experimental method",
+        "Prompt template cited and evaluated as a system baseline",
+        "Harness or evaluation protocol adopted into the official framework",
+        "Build data cited as a named data point in quantitative analysis",
+      ],
+      adoptionNote:
+        "Inspiration alone does not qualify, the contribution must appear in the paper in a attributable form.\nCo-authorship follows standard academic norms.",
+    },
   },
   faq: {
     tag: "// 08 — FAQ",
@@ -493,7 +509,7 @@ const zh: Content = {
     ctaSubmit: "前往 Kaggle 提交",
   },
   leaderboard: {
-    tag: "// 06 — 排行榜",
+    tag: "// 07 — 排行榜",
     title: "第一赛季排行榜",
     status: "即将开放",
     tabs: {
@@ -522,11 +538,11 @@ const zh: Content = {
     ],
     emptyTitle: "竞技场正在预热",
     emptyBody:
-      "排行榜将在第一赛季开始时开放（2026.07）。前往 Kaggle 提交，占据你的位置。",
+      "排行榜将在第一赛季开始时开放（2026.07）。\n前往 Kaggle 提交，占据你的位置。",
     provisional: "Provisional",
   },
   awards: {
-    tag: "// 07 — 奖项",
+    tag: "// 06 — 奖项",
     title: "荣耀与奖励",
     pool: {
       label: "赛季奖金池",
@@ -554,6 +570,22 @@ const zh: Content = {
       { name: "Community Favorite", prize: "$75" },
       { name: "Best Human Boss Build", prize: "展示奖" },
     ],
+    academic: {
+      title: "学术共同作者",
+      badge: "学术贡献认可",
+      intro:
+        "公开分享你的贡献，若被 BuildArena 后续学术论文实质性采纳，将受邀以共同作者身份参与该论文。",
+      contributionsTitle: "符合条件的贡献类型",
+      contributions: [
+        "机械结构作为基准案例或消融实验目标",
+        "Agent workflow 被复现或作为实验方法分析",
+        "提示词模板被直接引用并作为系统基线评估",
+        "Harness 或评测协议被纳入官方评测框架",
+        "建造数据以具名数据点形式出现在定量分析中",
+      ],
+      adoptionNote:
+        "仅凭灵感启发不构成采纳，贡献须以可归因形式出现在论文中。\n共同作者资格遵照标准学术规范处理。",
+    },
   },
   faq: {
     tag: "// 08 — 常见问题",

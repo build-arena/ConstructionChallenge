@@ -25,8 +25,8 @@ function App() {
           <HowItWorks />
           <Scoring />
           <Submission />
-          <Leaderboard />
           <Awards />
+          <Leaderboard />
           <Faq />
         </main>
         <CtaFooter />
