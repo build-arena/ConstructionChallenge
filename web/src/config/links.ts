@@ -4,7 +4,9 @@
  */
 export const LINKS = {
   /** Top-right "jump to main site" button — currently points to the BuildArena ICML paper site. */
-  icmlPaper: "https://build-arena.github.io/",
+  paperhomepage: "https://build-arena.github.io/",
+  /** ICML 2026 conference paper page. */
+  icml2026paper: "https://openreview.net/forum?id=QAQKmIp3SZ",
   /** Submission entry — all "submit" CTAs route here. */
   kaggle: "https://www.kaggle.com/",
   /** BuildArena 2.0 code repository. */

@@ -76,7 +76,7 @@ export function NavBar() {
           </Button>
 
           <Button asChild size="sm" variant="outline" className="hidden sm:flex">
-            <a href={LINKS.icmlPaper} target="_blank" rel="noopener noreferrer">
+            <a href={LINKS.paperhomepage} target="_blank" rel="noopener noreferrer">
               {t.nav.jumpMain}
               <ExternalLink className="size-3.5" />
             </a>
@@ -126,7 +126,7 @@ export function NavBar() {
                 </Button>
                 <Button asChild variant="outline">
                   <a
-                    href={LINKS.icmlPaper}
+                    href={LINKS.icml2026paper}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -26,6 +26,7 @@ const en = {
     sloganRight: "build with your agents",
     ctaPrimary: "Join on Kaggle",
     ctaSecondary: "How it works",
+    ctaDownload: "Download MD",
     meta: "2026.07 – 2026.08 · BuildArena × Besiege",
   },
   season: {
@@ -289,10 +290,9 @@ const en = {
     links: [
       { label: "Kaggle", key: "kaggle" as LinkKey },
       { label: "Code Repo", key: "repo" as LinkKey },
-      { label: "BuildArena", key: "icmlPaper" as LinkKey },
+      { label: "BuildArena", key: "paperhomepage" as LinkKey },
       { label: "Besiege", key: "besiege" as LinkKey },
-      { label: "Discord", key: "discord" as LinkKey },
-      { label: "Contact", key: "email" as LinkKey },
+      { label: "ICML 2026 Paper", key: "icml2026paper" as LinkKey },
     ],
     copyright:
       "© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University.",
@@ -318,13 +318,14 @@ const zh: Content = {
   hero: {
     kicker: "BuildArena 2.0",
     title: "Construction Challenge",
-    season: "第一赛季 · 飞向宇宙浩瀚无垠",
+    season: "第一赛季 · 飞向宇宙 浩瀚无垠",
     subtitle:
       "智能体原生的工程建造竞技场。",
     sloganWrong: "自己单干建造",
     sloganRight: "和你的 agents 一起建造",
     ctaPrimary: "前往 Kaggle 参赛",
-    ctaSecondary: "查看流程",
+    ctaSecondary: "查看参赛流程",
+    ctaDownload: "下载 MD 文档",
     meta: "2026.07 – 2026.08 · BuildArena × Besiege",
   },
   season: {
@@ -574,9 +575,8 @@ const zh: Content = {
       { label: "Kaggle", key: "kaggle" as LinkKey },
       { label: "代码库", key: "repo" as LinkKey },
       { label: "BuildArena", key: "icmlPaper" as LinkKey },
+      { label: "ICML 2026", key: "icml2026" as LinkKey },
       { label: "Besiege", key: "besiege" as LinkKey },
-      { label: "Discord", key: "discord" as LinkKey },
-      { label: "联系我们", key: "email" as LinkKey },
     ],
     copyright:
       "© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University.",

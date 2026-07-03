@@ -1,11 +1,12 @@
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
 
 export function Hero() {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const h = t.hero
+  const mdFile = lang === "zh" ? "/BuildArena-Challenge-ZH.md" : "/BuildArena-Challenge-EN.md"
 
   return (
     <section
@@ -50,6 +51,12 @@ export function Hero() {
           </Button>
           <Button asChild size="lg" variant="outline">
             <a href="#how">{h.ctaSecondary}</a>
+          </Button>
+          <Button asChild size="lg" variant="outline">
+            <a href={mdFile} download>
+              <Download className="size-4" />
+              {h.ctaDownload}
+            </a>
           </Button>
         </div>
 
