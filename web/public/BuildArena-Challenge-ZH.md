@@ -315,6 +315,6 @@ Autopilot：定义好 agent 后由其全自主建造。Copilot：你用自然语
 
 <div align="center">
 
-© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University.
+© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University · Uniforce AI
 
 </div>

@@ -3,10 +3,10 @@ import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import tailwindcss from "@tailwindcss/vite"
 
-// build-arena-challenge.github.io is an org/user Pages site served at the root,
-// so the base path stays "/". Adjust here if deployed under a sub-path.
+// Deployed as a project site under build-arena/ConstructionChallenge,
+// served at https://build-arena.github.io/ConstructionChallenge/
 export default defineConfig({
-  base: "/",
+  base: "/ConstructionChallenge/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

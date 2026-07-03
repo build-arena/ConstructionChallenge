@@ -315,6 +315,6 @@ On Kaggle. This site is informational only.
 
 <div align="center">
 
-© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University.
+© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University · Uniforce AI
 
 </div>
