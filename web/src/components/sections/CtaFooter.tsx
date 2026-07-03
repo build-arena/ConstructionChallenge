@@ -25,7 +25,7 @@ export function CtaFooter() {
           </div>
 
           <div className="mt-14">
-            <p className="mb-4 font-pixel text-[0.55rem] uppercase tracking-widest text-steel">
+            <p className="mb-4 font-pixel text-[0.9rem] uppercase tracking-widest text-steel">
               {c.linksTitle}
             </p>
             <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">

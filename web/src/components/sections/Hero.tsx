@@ -11,10 +11,10 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24"
     >
       <div className="mx-auto flex w-[min(1100px,calc(100%-48px))] flex-col items-center py-16 text-center">
-        <span className="mb-6 inline-block border-2 border-crimson-bright bg-crimson-wine/90 px-4 py-2 font-pixel text-[0.6rem] uppercase tracking-wider shadow-[0_0_24px_rgba(200,16,46,0.42),6px_6px_0_rgba(0,73,144,0.8)]">
+        <span className="mb-6 inline-block border-2 border-crimson-bright bg-crimson-wine/90 px-4 py-2 font-pixel text-[1rem] uppercase tracking-wider shadow-[0_0_24px_rgba(200,16,46,0.42),6px_6px_0_rgba(0,73,144,0.8)]">
           {h.kicker}
         </span>
 
@@ -60,7 +60,7 @@ export function Hero() {
           </Button>
         </div>
 
-        <p className="mt-8 font-pixel text-[0.55rem] uppercase tracking-wider text-steel">
+        <p className="mt-8 font-pixel text-[0.85rem] uppercase tracking-wider text-steel">
           {h.meta}
         </p>
       </div>

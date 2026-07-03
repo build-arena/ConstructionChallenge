@@ -34,7 +34,7 @@ export function Season() {
         <Card className="gap-4 p-7">
           <div className="flex items-center gap-3">
             <Rocket className="size-5 text-crimson-bright" />
-            <h3 className="font-pixel text-[0.7rem] uppercase tracking-wider text-paper">
+            <h3 className="font-pixel text-[1.1rem] uppercase tracking-wider text-paper">
               {s.briefTitle}
             </h3>
           </div>
@@ -45,13 +45,13 @@ export function Season() {
           <Badge variant="accent" className="w-fit">
             {s.datesLabel}
           </Badge>
-          <p className="font-pixel text-xl leading-relaxed text-paper">
+          <p className="font-pixel text-2xl leading-relaxed text-paper">
             {s.dates}
           </p>
         </Card>
       </div>
 
-      <h3 className="mt-12 mb-5 font-pixel text-[0.7rem] uppercase tracking-wider text-ba-orange">
+      <h3 className="mt-12 mb-5 font-pixel text-[1.1rem] uppercase tracking-wider text-ba-orange">
         {s.hooksTitle}
       </h3>
       <div className="grid gap-5 md:grid-cols-3">

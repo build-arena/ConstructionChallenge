@@ -8,7 +8,7 @@ import { LINKS } from "@/config/links"
 function FileList({ title, items }: { title: string; items: string[] }) {
   return (
     <Card className="gap-3 p-6">
-      <h3 className="flex items-center gap-2 font-pixel text-[0.62rem] uppercase tracking-wider text-paper">
+      <h3 className="flex items-center gap-2 font-pixel text-[1rem] uppercase tracking-wider text-paper">
         <FileText className="size-4 text-crimson-bright" />
         {title}
       </h3>
@@ -57,12 +57,12 @@ export function Submission() {
         <div className="flex flex-col gap-6">
           <FileList title={sb.humanTitle} items={sb.humanDeliverables} />
           <Card className="gap-3 p-6">
-            <h3 className="font-pixel text-[0.62rem] uppercase tracking-wider text-paper">
+            <h3 className="font-pixel text-[1rem] uppercase tracking-wider text-paper">
               {sb.reviewTitle}
             </h3>
             <ul className="space-y-2">
               {sb.review.map((item) => (
-                <li key={item} className="flex gap-2.5 text-xs text-mist">
+                <li key={item} className="flex gap-2.5 text-sm text-mist">
                   <span className="text-crimson-bright">›</span>
                   <span className="leading-snug">{item}</span>
                 </li>
@@ -72,7 +72,7 @@ export function Submission() {
         </div>
       </div>
 
-      <h3 className="mt-12 mb-5 font-pixel text-[0.7rem] uppercase tracking-wider text-ba-orange">
+      <h3 className="mt-12 mb-5 font-pixel text-[1.2rem] uppercase tracking-wider text-ba-orange">
         {sb.validationTitle}
       </h3>
       <div className="grid gap-4 md:grid-cols-2">

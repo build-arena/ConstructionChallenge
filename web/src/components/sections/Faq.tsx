@@ -18,11 +18,11 @@ export function Faq() {
       <Accordion type="single" collapsible className="space-y-3">
         {f.items.map((item, i) => (
           <AccordionItem key={item.q} value={`faq-${i}`}>
-            <AccordionTrigger className="text-sm md:text-base">
+            <AccordionTrigger className="text-base md:text-lg">
               {item.q}
             </AccordionTrigger>
             <AccordionContent>
-              <p className="leading-relaxed text-cyan">{item.a}</p>
+              <p className="text-base leading-relaxed text-cyan">{item.a}</p>
             </AccordionContent>
           </AccordionItem>
         ))}

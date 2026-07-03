@@ -45,7 +45,7 @@ function LeaderboardTable() {
       {/* Empty-state overlay message */}
       <div className="flex flex-col items-center gap-3 border-t-2 border-border px-6 py-12 text-center">
         <Trophy className="size-8 text-ba-orange" />
-        <h3 className="font-pixel text-[0.7rem] uppercase tracking-wider text-paper">
+        <h3 className="font-pixel text-[1.1rem] uppercase tracking-wider text-paper">
           {lb.emptyTitle}
         </h3>
         <p className="max-w-md text-sm leading-relaxed text-mist">
@@ -64,7 +64,7 @@ export function Leaderboard() {
     <Section id="leaderboard">
       <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div className="max-w-3xl">
-          <span className="font-pixel text-[0.6rem] uppercase tracking-widest text-ba-orange [text-shadow:2px_2px_0_rgba(0,73,144,0.75)]">
+          <span className="font-pixel text-[1rem] uppercase tracking-widest text-ba-orange [text-shadow:2px_2px_0_rgba(0,73,144,0.75)]">
             {lb.tag}
           </span>
           <h2 className="mt-4 text-3xl font-extrabold uppercase leading-tight tracking-tight text-paper md:text-4xl lg:text-5xl">

@@ -43,46 +43,46 @@ export function NavBar() {
           : "border-b-2 border-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 w-[min(1180px,calc(100%-32px))] items-center justify-between gap-4">
+      <div className="mx-auto flex h-20 w-[min(1180px,calc(100%-40px))] items-center gap-6">
         <a
           href="#home"
-          className="font-pixel text-[0.62rem] uppercase tracking-wider text-paper"
+          className="shrink-0 font-pixel text-[1rem] uppercase tracking-wider text-paper"
         >
           BuildArena<span className="text-crimson-bright">_2.0</span>
         </a>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden flex-1 items-center justify-center gap-2 lg:flex">
           {NAV_ITEMS.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
-              className="px-2.5 py-1.5 text-xs uppercase tracking-wide text-mist transition-colors hover:text-crimson-bright"
+              className="min-w-[5rem] whitespace-nowrap px-3 py-2 text-center text-sm uppercase tracking-wide text-mist transition-colors hover:text-crimson-bright"
             >
               {t.nav[item.key]}
             </a>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="ml-auto flex shrink-0 items-center gap-3">
           <Button
-            size="sm"
+            size="default"
             variant="outline"
             onClick={toggle}
-            className="h-9 border-ba-blue-light bg-ba-blue/85 px-3 font-pixel text-[0.58rem] tracking-wider text-cyan shadow-[4px_4px_0_rgba(200,16,46,0.85),inset_-3px_-3px_0_rgba(0,0,0,0.45)] hover:border-cyan hover:bg-ba-blue-light hover:text-paper hover:shadow-[0_0_22px_rgba(32,211,216,0.5),4px_4px_0_rgba(200,16,46,0.85)]"
+            className="min-w-[5.5rem] justify-center border-ba-blue-light bg-ba-blue/85 px-4 font-pixel text-[0.85rem] tracking-wider text-cyan shadow-[4px_4px_0_rgba(200,16,46,0.85),inset_-3px_-3px_0_rgba(0,0,0,0.45)] hover:border-cyan hover:bg-ba-blue-light hover:text-paper hover:shadow-[0_0_22px_rgba(32,211,216,0.5),4px_4px_0_rgba(200,16,46,0.85)]"
             aria-label="Switch language"
           >
-            <Languages className="size-4" />
+            <Languages className="size-5 shrink-0" />
             {t.nav.switchTo}
           </Button>
 
-          <Button asChild size="sm" variant="outline" className="hidden sm:flex">
+          <Button asChild size="default" variant="outline" className="hidden min-w-[7rem] justify-center sm:flex">
             <a href={LINKS.paperhomepage} target="_blank" rel="noopener noreferrer">
               {t.nav.jumpMain}
-              <ExternalLink className="size-3.5" />
+              <ExternalLink className="size-4 shrink-0" />
             </a>
           </Button>
 
-          <Button asChild size="sm" className="hidden md:flex">
+          <Button asChild size="default" className="hidden min-w-[9rem] justify-center md:flex">
             <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
               {t.nav.join}
             </a>
@@ -94,15 +94,15 @@ export function NavBar() {
               <Button
                 size="icon"
                 variant="outline"
-                className="lg:hidden"
+                className="size-11 lg:hidden"
                 aria-label={t.nav.menu}
               >
-                <Menu className="size-5" />
+                <Menu className="size-6" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="bg-space-800">
               <SheetHeader>
-                <SheetTitle className="font-pixel text-[0.62rem] uppercase">
+                <SheetTitle className="font-pixel text-[1rem] uppercase">
                   {t.nav.menu}
                 </SheetTitle>
               </SheetHeader>
@@ -111,7 +111,7 @@ export function NavBar() {
                   <SheetClose asChild key={item.id}>
                     <a
                       href={`#${item.id}`}
-                      className="border-b border-white/10 py-3 text-sm uppercase tracking-wide text-mist transition-colors hover:text-crimson-bright"
+                      className="border-b border-white/10 py-4 text-base uppercase tracking-wide text-mist transition-colors hover:text-crimson-bright"
                     >
                       {t.nav[item.key]}
                     </a>

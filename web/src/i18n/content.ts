@@ -22,8 +22,8 @@ const en = {
     season: "Season 1 · To Infinity, and Beyond",
     subtitle:
       "The agent-native engineering construction arena.",
-    sloganWrong: "build by yourself",
-    sloganRight: "build with your agents",
+    sloganWrong: "Build all on your own",
+    sloganRight: "Build with your Agents",
     ctaPrimary: "Join on Kaggle",
     ctaSecondary: "How it works",
     ctaDownload: "Download MD",
@@ -321,8 +321,8 @@ const zh: Content = {
     season: "第一赛季 · 飞向宇宙 浩瀚无垠",
     subtitle:
       "智能体原生的工程建造竞技场。",
-    sloganWrong: "自己单干建造",
-    sloganRight: "和你的 agents 一起建造",
+    sloganWrong: "自己一个人建造",
+    sloganRight: "和你的 Agents 一起建造",
     ctaPrimary: "前往 Kaggle 参赛",
     ctaSecondary: "查看参赛流程",
     ctaDownload: "下载 MD 文档",
@@ -330,7 +330,7 @@ const zh: Content = {
   },
   season: {
     tag: "// 01 — 赛季",
-    title: "第一赛季\n「飞向宇宙浩瀚无垠」",
+    title: "第一赛季\n「飞向宇宙 浩瀚无垠」",
     datesLabel: "时间",
     dates: "2026.7 – 2026.8",
     briefTitle: "赛题",
@@ -560,7 +560,7 @@ const zh: Content = {
     title: "常见问题",
     items: [
       { q: "Autopilot 和 Copilot 有什么区别？", a: "Autopilot：定义好 agent 后由其全自主建造。Copilot：你用自然语言引导 agent，但所有结构变化仍须经 MCP。" },
-      { q: "一定要买 The Broken Beyond DLC 吗？", a: "需要——第一赛季的入轨赛题运行在该 DLC 的太空沙盒中。" },
+      { q: "要买 The Broken Beyond DLC 吗？", a: "需要，第一赛季的入轨赛题运行在该 DLC 的太空沙盒中。" },
       { q: "运行阶段可以让 AI 驾驶吗？", a: "不行。所有运行都由人类手动驾驶；pilot 仅指建造阶段。" },
       { q: "Human Boss Challenge 会进总榜吗？", a: "不进 AI 总榜，但其 Performance Score 会作为与 AI 的对比展示。" },
       { q: "Token 用量如何统计？", a: "三优先级：官方 Token Logger ＞ 模型 API usage 字段 ＞ 离线估算。\n获奖候选需可信 token 记录。" },

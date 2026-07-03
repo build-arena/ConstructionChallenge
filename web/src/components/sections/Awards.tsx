@@ -19,7 +19,7 @@ export function Awards() {
         <div className="flex items-center gap-4">
           <Coins className="size-8 shrink-0 text-ba-orange" />
           <div>
-            <p className="font-pixel text-[0.55rem] uppercase tracking-widest text-ba-orange">
+            <p className="font-pixel text-[1rem] uppercase tracking-widest text-ba-orange">
               {a.pool.label}
             </p>
             <p className="mt-1.5 flex items-baseline gap-2 text-paper">
@@ -32,7 +32,7 @@ export function Awards() {
         </div>
       </div>
 
-      <h3 className="mb-5 font-pixel text-[0.7rem] uppercase tracking-wider text-ba-orange">
+      <h3 className="mb-5 font-pixel text-[1.2rem] uppercase tracking-wider text-ba-orange">
         {a.mainTitle}
       </h3>
       <div className="grid gap-6 md:grid-cols-3">
@@ -65,7 +65,7 @@ export function Awards() {
 
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
         <div>
-          <h3 className="mb-5 font-pixel text-[0.7rem] uppercase tracking-wider text-ba-orange">
+          <h3 className="mb-5 font-pixel text-[1.2rem] uppercase tracking-wider text-ba-orange">
             {a.titlesTitle}
           </h3>
           <div className="space-y-4">
@@ -86,7 +86,7 @@ export function Awards() {
         </div>
 
         <div>
-          <h3 className="mb-5 font-pixel text-[0.7rem] uppercase tracking-wider text-ba-orange">
+          <h3 className="mb-5 font-pixel text-[1.2rem] uppercase tracking-wider text-ba-orange">
             {a.communityTitle}
           </h3>
           <div className="space-y-3">
@@ -102,7 +102,7 @@ export function Awards() {
               </div>
             ))}
           </div>
-          <p className="mt-6 border-l-2 border-ba-orange bg-secondary/20 p-4 text-xs leading-relaxed text-mist">
+          <p className="mt-6 border-l-2 border-ba-orange bg-secondary/20 p-4 text-sm leading-relaxed text-mist">
             <span className="font-bold uppercase text-paper">
               {a.dedupeTitle}:{" "}
             </span>

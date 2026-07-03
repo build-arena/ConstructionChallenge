@@ -2,7 +2,7 @@
 
 # 🚀 BuildArena 2.0 — Construction Challenge
 
-**第一赛季 · 飞向宇宙浩瀚无垠**
+**第一赛季 · 飞向宇宙 浩瀚无垠**
 
 `2026.07 – 2026.08 · BuildArena × Besiege`
 
@@ -29,7 +29,7 @@
 
 ---
 
-## 🪐 第一赛季 — 「飞向宇宙浩瀚无垠」
+## 🪐 第一赛季 — 「飞向宇宙 浩瀚无垠」
 
 > **时间：**2026.7 – 2026.8
 
@@ -260,9 +260,9 @@ Autopilot：定义好 agent 后由其全自主建造。Copilot：你用自然语
 </details>
 
 <details>
-<summary><strong>一定要买 The Broken Beyond DLC 吗？</strong></summary>
+<summary><strong>要买 The Broken Beyond DLC 吗？</strong></summary>
 
-需要——第一赛季的入轨赛题运行在该 DLC 的太空沙盒中。
+需要，第一赛季的入轨赛题运行在该 DLC 的太空沙盒中。
 
 </details>
 

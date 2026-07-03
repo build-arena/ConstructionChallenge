@@ -40,7 +40,7 @@ export function Tracks() {
               <p className="text-sm leading-relaxed text-mist">{item.tagline}</p>
 
               <div>
-                <p className="mb-3 font-pixel text-[0.55rem] uppercase tracking-wider text-ba-orange">
+                <p className="mb-3 font-pixel text-[1rem] uppercase tracking-wider text-ba-orange">
                   {tr.rulesLabel}
                 </p>
                 <ul className="space-y-2.5">
