@@ -16,9 +16,11 @@ type I18nValue = {
   t: Content
 }
 
+type I18nState = Omit<I18nValue, "t">
+
 const STORAGE_KEY = "ba-lang"
 
-const I18nContext = createContext<I18nValue | null>(null)
+const I18nContext = createContext<I18nState | null>(null)
 
 function getInitialLang(): Lang {
   if (typeof window === "undefined") return "en"
@@ -54,8 +56,8 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = lang
   }, [lang])
 
-  const value = useMemo<I18nValue>(
-    () => ({ lang, setLang, toggle, t: content[lang] }),
+  const value = useMemo<I18nState>(
+    () => ({ lang, setLang, toggle }),
     [lang, setLang, toggle],
   )
 
@@ -65,5 +67,5 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 export function useI18n(): I18nValue {
   const ctx = useContext(I18nContext)
   if (!ctx) throw new Error("useI18n must be used within I18nProvider")
-  return ctx
+  return { ...ctx, t: content[ctx.lang] }
 }
