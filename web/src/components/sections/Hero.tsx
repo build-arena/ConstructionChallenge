@@ -22,7 +22,7 @@ export function Hero() {
           {h.title}
         </h1>
 
-        <p className="mt-6 inline-block border-y-2 border-white/15 px-5 py-2 font-pixel text-[1rem] uppercase tracking-widest text-ba-orange md:text-[1.35rem]">
+        <p className={`mt-6 inline-block border-y-2 border-white/15 px-5 py-2 font-pixel text-[1rem] uppercase tracking-widest text-ba-orange md:text-[1.35rem]${lang === "zh" ? " font-bold" : ""}`}>
           {h.season}
         </p>
 

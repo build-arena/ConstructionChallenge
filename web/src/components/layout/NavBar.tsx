@@ -21,6 +21,7 @@ const NAV_ITEMS = [
   { id: "awards", key: "awards" },
   { id: "leaderboard", key: "leaderboard" },
   { id: "faq", key: "faq" },
+  { id: "organizers", key: "organizers" },
 ] as const
 
 export function NavBar() {

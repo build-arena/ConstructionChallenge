@@ -11,6 +11,7 @@ const en = {
     leaderboard: "Leaderboard",
     awards: "Awards",
     faq: "FAQ",
+    organizers: "Organizers",
     join: "Join on Kaggle",
     jumpMain: "ICML 2026",
     menu: "Menu",
@@ -287,6 +288,39 @@ const en = {
         "Inspiration alone does not qualify, the contribution must appear in the paper in a attributable form.\nCo-authorship follows standard academic norms.",
     },
   },
+  organizers: {
+    tag: "// 09 — Organizers & Sponsors",
+    title: "Organizers & Sponsors",
+    organizerTitle: "Organizer",
+    organizer: {
+      name: "AI for Scientific Simulation and Discovery Lab",
+      affiliation: "Westlake University",
+      schoolIntro:
+        "A new type of research university in Hangzhou, China.\nPublicly supported and privately funded.\nDedicated to top-talent cultivation and breakthroughs in basic research and cutting-edge technology.",
+      intro:
+        "Solving core AI × science problems:\nGenerative AI for physical simulation, control & design\nSelf-evolving architectures and generalist AI scientists & engineers\nAI virtual cells decoding the logic of living systems.",
+      website: "https://ai4s.lab.westlake.edu.cn/",
+      schoolWebsite: "https://www.westlake.edu.cn/",
+      labLogo: "/site_assets/lab_logo.png",
+      schoolLogo: "/site_assets/westlake_logo.png",
+    },
+    sponsorTitle: "Sponsor",
+    sponsors: [
+      {
+        name: "Uniforce AI",
+        tagline: "AI for Engineering beyond limits",
+        intro:
+          "Dedicated to accelerating industrial design and manufacturing through advanced AI.\nMaking engineering smarter, faster, and more efficient.",
+        website: "",
+        logo: "",
+      },
+    ],
+    sponsorshipTitle: "Become a Sponsor",
+    sponsorshipBody:
+      "BuildArena is an open academic challenge bridging AI research and mechanical engineering simulation.\nIf your organization is interested in co-sponsoring a future season, featuring your brand, we'd love to hear from you.\nAll sponsorships will be used for prize and maintenance.",
+    sponsorshipCta: "Get in Touch",
+    sponsorshipEmail: "wutailin@westlake.edu.cn",
+  },
   faq: {
     tag: "// 08 — FAQ",
     title: "Frequently Asked",
@@ -311,7 +345,7 @@ const en = {
       { label: "ICML 2026 Paper", key: "icml2026paper" as LinkKey },
     ],
     copyright:
-      "© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University.",
+      "© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University · Uniforce AI",
   },
 }
 
@@ -326,6 +360,7 @@ const zh: Content = {
     leaderboard: "排行榜",
     awards: "奖项",
     faq: "常见问题",
+    organizers: "主办与赞助",
     join: "前往 Kaggle 参赛",
     jumpMain: "ICML 2026",
     menu: "菜单",
@@ -587,6 +622,39 @@ const zh: Content = {
         "仅凭灵感启发不构成采纳，贡献须以可归因形式出现在论文中。\n共同作者资格遵照标准学术规范处理。",
     },
   },
+  organizers: {
+    tag: "// 09 — 主办与赞助",
+    title: "主办与赞助",
+    organizerTitle: "主办方",
+    organizer: {
+      name: "人工智能与科学仿真发现实验室",
+      affiliation: "西湖大学",
+      schoolIntro:
+        "社会力量举办、国家重点支持的新型研究型大学。\n致力于培养顶尖人才、推动基础研究与前沿技术突破。",
+      intro:
+        "聚焦 AI × 科学三大方向：\n生成式 AI 用于物理仿真、控制与设计；\n自进化 AI 架构与通用 AI 科学家/工程师；\nAI 虚拟细胞与生命系统内在逻辑解析。",
+      website: "https://ai4s.lab.westlake.edu.cn/",
+      schoolWebsite: "https://www.westlake.edu.cn/",
+      labLogo: "/site_assets/lab_logo.png",
+      schoolLogo: "/site_assets/westlake_logo.png",
+    },
+    sponsorTitle: "赞助商",
+    sponsors: [
+      {
+        name: "Uniforce AI",
+        tagline: "AI for Engineering beyond limits",
+        intro:
+          "Uniforce AI 致力于利用先进 AI 技术加速工业设计与生产，让工程设计更智能、更高效。",
+        website: "",
+        logo: "",
+      },
+    ],
+    sponsorshipTitle: "赞助合作",
+    sponsorshipBody:
+      "BuildArena 是连接 AI 研究与机械工程仿真的开放学术竞赛。\n如果您的机构有意向共同赞助未来赛季、进行品牌展示，欢迎联系我们。\n所有赞助均会用于比赛奖金和维护。",
+    sponsorshipCta: "联系我们",
+    sponsorshipEmail: "wutailin@westlake.edu.cn",
+  },
   faq: {
     tag: "// 08 — 常见问题",
     title: "常见问题",
@@ -600,7 +668,7 @@ const zh: Content = {
     ],
   },
   cta: {
-    title: "准备好和你的 agent\n一起建造了吗？",
+    title: "准备好和你的 agents\n一起建造了吗？",
     button: "前往 Kaggle 参赛",
     linksTitle: "链接",
     links: [
@@ -611,7 +679,7 @@ const zh: Content = {
       { label: "Besiege", key: "besiege" as LinkKey },
     ],
     copyright:
-      "© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University.",
+      "© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University · Uniforce AI",
   },
 }
 
