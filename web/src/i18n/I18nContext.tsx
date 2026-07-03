@@ -20,14 +20,14 @@ const STORAGE_KEY = "ba-lang"
 
 const I18nContext = createContext<I18nValue | null>(null)
 
-// Language switch is temporarily hidden — force English regardless of stored /
-// browser preference. To re-enable bilingual mode, restore the detection below.
 function getInitialLang(): Lang {
-  return "en"
-  // const stored = window.localStorage.getItem(STORAGE_KEY)
-  // if (stored === "en" || stored === "zh") return stored
-  // const nav = window.navigator.language.toLowerCase()
-  // return nav.startsWith("zh") ? "zh" : "en"
+  if (typeof window === "undefined") return "en"
+
+  const stored = window.localStorage.getItem(STORAGE_KEY)
+  if (stored === "en" || stored === "zh") return stored
+
+  const nav = window.navigator.language.toLowerCase()
+  return nav.startsWith("zh") ? "zh" : "en"
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {

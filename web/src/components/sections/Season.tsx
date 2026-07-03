@@ -4,13 +4,31 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useI18n } from "@/i18n/I18nContext"
 
+function SeasonTitle({ title }: { title: string }) {
+  const titleLines = title.split("\n")
+
+  if (titleLines.length !== 2) {
+    throw new Error("Season title must contain exactly one newline.")
+  }
+
+  const [seasonName, seasonSubtitle] = titleLines
+
+  return (
+    <>
+      <span className="text-crimson-bright">{seasonName}</span>
+      {"\n"}
+      {seasonSubtitle}
+    </>
+  )
+}
+
 export function Season() {
   const { t } = useI18n()
   const s = t.season
 
   return (
     <Section id="season">
-      <SectionHeading tag={s.tag} title={s.title} />
+      <SectionHeading tag={s.tag} title={<SeasonTitle title={s.title} />} />
 
       <div className="grid gap-6 lg:grid-cols-[1.6fr_1fr]">
         <Card className="gap-4 p-7">

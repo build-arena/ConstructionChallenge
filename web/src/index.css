@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "3270NerdFontMono";
+  src: url("/site_assets/fonts/3270NerdFontMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 /* ============================================================
@@ -123,8 +131,12 @@
   --radius-lg: 0px;
   --radius-xl: 0px;
 
-  --font-mono: "JetBrains Mono", "Courier New", ui-monospace, monospace;
-  --font-pixel: "Press Start 2P", "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", "Microsoft YaHei", "SimHei", "PingFang SC", "Noto Sans SC",
+    "Source Han Sans SC", "Courier New", ui-monospace, monospace;
+  --font-arcade-title: "3270NerdFontMono", "Microsoft YaHei", "SimHei", "PingFang SC",
+    "Noto Sans SC", "Courier New", monospace;
+  --font-pixel: "Press Start 2P", "JetBrains Mono", "Microsoft YaHei", "SimHei",
+    "PingFang SC", "Noto Sans SC", monospace;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -167,6 +179,20 @@
       linear-gradient(135deg, #06111e 0%, #0c2230 45%, #07111f 100%);
     background-attachment: fixed;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  span,
+  td,
+  th {
+    white-space: pre-line;
+  }
 }
 
 @layer utilities {
@@ -185,9 +211,9 @@
 
   .text-shadow-arcade {
     text-shadow:
-      4px 4px 0 var(--ba-ink),
-      7px 7px 0 var(--ba-crimson),
-      0 0 30px rgba(200, 16, 46, 0.4);
+      5px 5px 0 var(--ba-ink),
+      9px 9px 0 var(--ba-crimson),
+      0 0 36px rgba(200, 16, 46, 0.42);
   }
 
   /* Pixel grid + starfield backdrops (pure CSS, like the legacy page) */

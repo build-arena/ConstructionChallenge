@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ExternalLink, Menu } from "lucide-react"
+import { ExternalLink, Languages, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -24,7 +24,7 @@ const NAV_ITEMS = [
 ] as const
 
 export function NavBar() {
-  const { t } = useI18n()
+  const { t, toggle } = useI18n()
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -64,18 +64,16 @@ export function NavBar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          {/* Language switch temporarily hidden — defaulting to English.
-              Re-enable by restoring this button and `toggle` from useI18n().
           <Button
             size="sm"
-            variant="ghost"
+            variant="outline"
             onClick={toggle}
-            className="text-mist"
+            className="h-9 border-ba-blue-light bg-ba-blue/85 px-3 font-pixel text-[0.58rem] tracking-wider text-cyan shadow-[4px_4px_0_rgba(200,16,46,0.85),inset_-3px_-3px_0_rgba(0,0,0,0.45)] hover:border-cyan hover:bg-ba-blue-light hover:text-paper hover:shadow-[0_0_22px_rgba(32,211,216,0.5),4px_4px_0_rgba(200,16,46,0.85)]"
             aria-label="Switch language"
           >
             <Languages className="size-4" />
             {t.nav.switchTo}
-          </Button> */}
+          </Button>
 
           <Button asChild size="sm" variant="outline" className="hidden sm:flex">
             <a href={LINKS.icmlPaper} target="_blank" rel="noopener noreferrer">

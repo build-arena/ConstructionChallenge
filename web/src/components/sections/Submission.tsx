@@ -2,12 +2,6 @@ import { ArrowRight, FileText, Check } from "lucide-react"
 import { Section, SectionHeading } from "@/components/layout/Section"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
 
@@ -27,6 +21,25 @@ function FileList({ title, items }: { title: string; items: string[] }) {
         ))}
       </ul>
     </Card>
+  )
+}
+
+function ValidationAnswer({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(/(REJECTED)/g).map((part, index) =>
+        part === "REJECTED" ? (
+          <span
+            key={`${part}-${index}`}
+            className="font-extrabold text-crimson-bright [text-shadow:2px_2px_0_var(--ba-ink)]"
+          >
+            {part}
+          </span>
+        ) : (
+          part
+        ),
+      )}
+    </>
   )
 }
 
@@ -62,16 +75,23 @@ export function Submission() {
       <h3 className="mt-12 mb-5 font-pixel text-[0.7rem] uppercase tracking-wider text-ba-orange">
         {sb.validationTitle}
       </h3>
-      <Accordion type="single" collapsible className="space-y-3">
+      <div className="grid gap-4 md:grid-cols-2">
         {sb.validations.map((v, i) => (
-          <AccordionItem key={v.q} value={`v-${i}`}>
-            <AccordionTrigger>{v.q}</AccordionTrigger>
-            <AccordionContent>
-              <p className="leading-relaxed text-cyan">{v.a}</p>
-            </AccordionContent>
-          </AccordionItem>
+          <Card key={v.q} className="gap-3 border-crimson-bright/60 bg-crimson-wine/15 p-5">
+            <div className="flex items-center gap-3">
+              <span className="font-pixel text-sm text-crimson-bright">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h4 className="text-base font-extrabold uppercase tracking-wide text-paper">
+                {v.q}
+              </h4>
+            </div>
+            <p className="text-sm leading-relaxed text-cyan">
+              <ValidationAnswer text={v.a} />
+            </p>
+          </Card>
         ))}
-      </Accordion>
+      </div>
 
       <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
         <Button asChild variant="outline" size="lg">

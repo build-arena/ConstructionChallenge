@@ -14,7 +14,7 @@ export function Awards() {
     <Section id="awards">
       <SectionHeading tag={a.tag} title={a.title} />
 
-      {/* Monthly prize pool banner */}
+      {/* Prize pool banner */}
       <div className="mb-12 flex flex-col items-center justify-between gap-4 border-2 border-crimson-bright bg-crimson-wine/30 p-6 shadow-[6px_6px_0_rgba(0,73,144,0.7)] sm:flex-row">
         <div className="flex items-center gap-4">
           <Coins className="size-8 shrink-0 text-ba-orange" />
@@ -30,9 +30,6 @@ export function Awards() {
             </p>
           </div>
         </div>
-        <p className="max-w-md text-xs leading-relaxed text-mist sm:text-right">
-          {a.pool.note}
-        </p>
       </div>
 
       <h3 className="mb-5 font-pixel text-[0.7rem] uppercase tracking-wider text-ba-orange">

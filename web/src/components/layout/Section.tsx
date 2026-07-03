@@ -28,7 +28,7 @@ export function SectionHeading({
   intro,
 }: {
   tag: string
-  title: string
+  title: ReactNode
   intro?: string
 }) {
   return (

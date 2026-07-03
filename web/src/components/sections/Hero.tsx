@@ -17,11 +17,11 @@ export function Hero() {
           {h.kicker}
         </span>
 
-        <h1 className="text-shadow-arcade max-w-4xl text-[clamp(2.6rem,9vw,7.5rem)] font-extrabold uppercase leading-[0.92] tracking-tighter text-paper">
+        <h1 className="text-shadow-arcade max-w-[980px] font-arcade-title text-[clamp(4rem,9vw,8.8rem)] font-bold uppercase leading-[0.92] tracking-[-0.06em] text-paper">
           {h.title}
         </h1>
 
-        <p className="mt-6 inline-block border-y-2 border-white/15 px-4 py-1.5 font-pixel text-[0.6rem] uppercase tracking-widest text-ba-orange">
+        <p className="mt-6 inline-block border-y-2 border-white/15 px-5 py-2 font-pixel text-[1rem] uppercase tracking-widest text-ba-orange md:text-[1.35rem]">
           {h.season}
         </p>
 
@@ -29,7 +29,10 @@ export function Hero() {
           {h.subtitle}
         </p>
 
-        <div className="my-9 w-[min(620px,100%)] border-[3px] border-mist bg-space-900/85 px-6 py-5 shadow-[10px_10px_0_#c8102e,inset_-5px_-5px_0_rgba(0,0,0,0.48)]">
+        <div
+          data-slot="hero-slogan"
+          className="my-9 w-[min(620px,100%)] border-[3px] border-mist bg-space-900/85 px-6 py-5 shadow-[10px_10px_0_#c8102e,inset_-5px_-5px_0_rgba(0,0,0,0.48)]"
+        >
           <p className="my-1 text-xl text-crimson-bright line-through decoration-[3px] md:text-2xl">
             ✗ {h.sloganWrong}
           </p>
