@@ -301,8 +301,8 @@ const en = {
         "Solving core AI × science problems:\nGenerative AI for physical simulation, control & design\nSelf-evolving architectures and generalist AI scientists & engineers\nAI virtual cells decoding the logic of living systems.",
       website: "https://ai4s.lab.westlake.edu.cn/",
       schoolWebsite: "https://www.westlake.edu.cn/",
-      labLogo: "/site_assets/lab_logo.png",
-      schoolLogo: "/site_assets/westlake_logo.png",
+      labLogo: "site_assets/lab_logo.png",
+      schoolLogo: "site_assets/westlake_logo.png",
     },
     sponsorTitle: "Sponsor",
     sponsors: [
@@ -635,8 +635,8 @@ const zh: Content = {
         "聚焦 AI × 科学三大方向：\n生成式 AI 用于物理仿真、控制与设计；\n自进化 AI 架构与通用 AI 科学家/工程师；\nAI 虚拟细胞与生命系统内在逻辑解析。",
       website: "https://ai4s.lab.westlake.edu.cn/",
       schoolWebsite: "https://www.westlake.edu.cn/",
-      labLogo: "/site_assets/lab_logo.png",
-      schoolLogo: "/site_assets/westlake_logo.png",
+      labLogo: "site_assets/lab_logo.png",
+      schoolLogo: "site_assets/westlake_logo.png",
     },
     sponsorTitle: "赞助商",
     sponsors: [

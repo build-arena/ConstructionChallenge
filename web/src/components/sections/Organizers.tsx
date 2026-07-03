@@ -30,7 +30,7 @@ export function Organizers() {
               aria-label={o.organizer.name}
             >
               <img
-                src={o.organizer.labLogo}
+                src={import.meta.env.BASE_URL + o.organizer.labLogo}
                 alt={o.organizer.name}
                 className="h-14 w-auto object-contain"
                 style={{ filter: "brightness(0) invert(1)" }}
@@ -48,7 +48,7 @@ export function Organizers() {
               aria-label={o.organizer.affiliation}
             >
               <img
-                src={o.organizer.schoolLogo}
+                src={import.meta.env.BASE_URL + o.organizer.schoolLogo}
                 alt={o.organizer.affiliation}
                 className="h-10 w-auto object-contain"
               />
@@ -96,7 +96,7 @@ export function Organizers() {
               {/* Logo area: text logo if no image */}
               {sponsor.logo ? (
                 <img
-                  src={sponsor.logo}
+                  src={import.meta.env.BASE_URL + sponsor.logo}
                   alt={sponsor.name}
                   className="h-10 w-auto object-contain"
                 />
