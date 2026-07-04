@@ -45,12 +45,17 @@ export function NavBar() {
       )}
     >
       <div className="mx-auto flex h-20 w-[min(1180px,calc(100%-40px))] items-center gap-6">
-        <a
-          href="#home"
-          className="shrink-0 font-pixel text-[1rem] uppercase tracking-wider text-paper"
+        <Button
+          asChild
+          size="sm"
+          variant="ghost"
+          className="h-auto shrink-0 px-0 font-pixel text-[1rem] uppercase tracking-wider text-paper hover:bg-transparent hover:text-paper"
         >
-          BuildArena<span className="text-crimson-bright">_2.0</span>
-        </a>
+          <a href={LINKS.repo} target="_blank" rel="noopener noreferrer">
+            BuildArena<span className="text-crimson-bright">_2.0</span>
+            <ExternalLink className="size-3.5 text-mist" />
+          </a>
+        </Button>
 
         <nav className="hidden flex-1 items-center justify-center gap-2 lg:flex">
           {NAV_ITEMS.map((item) => (

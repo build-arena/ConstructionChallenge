@@ -1,11 +1,11 @@
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ExternalLink } from "lucide-react"
 import { Section, SectionHeading } from "@/components/layout/Section"
 import { Button } from "@/components/ui/button"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
 
 export function HowItWorks() {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const h = t.how
 
   return (
@@ -28,6 +28,14 @@ export function HowItWorks() {
               <p className="mt-1.5 text-sm leading-snug text-mist">
                 {step.body}
               </p>
+              {step.n === "01" ? (
+                <Button asChild size="sm" variant="outline" className="mt-4">
+                  <a href={LINKS.repo} target="_blank" rel="noopener noreferrer">
+                    {lang === "zh" ? "Fork 代码库" : "Fork repo"}
+                    <ExternalLink className="size-3.5" />
+                  </a>
+                </Button>
+              ) : null}
             </div>
           </li>
         ))}

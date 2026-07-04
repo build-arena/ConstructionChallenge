@@ -1,4 +1,4 @@
-import { ArrowRight, Download } from "lucide-react"
+import { ArrowRight, Download, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
@@ -16,9 +16,16 @@ export function Hero() {
       className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24"
     >
       <div className="mx-auto flex w-[min(1100px,calc(100%-48px))] flex-col items-center py-16 text-center">
-        <span className="mb-6 inline-block border-2 border-crimson-bright bg-crimson-wine/90 px-4 py-2 font-pixel text-[1rem] uppercase tracking-wider shadow-[0_0_24px_rgba(200,16,46,0.42),6px_6px_0_rgba(0,73,144,0.8)]">
-          {h.kicker}
-        </span>
+        <Button
+          asChild
+          size="sm"
+          className="mb-6 h-auto border-crimson-bright bg-crimson-wine/90 px-4 py-2 font-pixel text-[1rem] uppercase tracking-wider shadow-[0_0_24px_rgba(200,16,46,0.42),6px_6px_0_rgba(0,73,144,0.8)]"
+        >
+          <a href={LINKS.repo} target="_blank" rel="noopener noreferrer">
+            {h.kicker}
+            <ExternalLink className="size-3.5" />
+          </a>
+        </Button>
 
         <h1 className="text-shadow-arcade max-w-[980px] font-arcade-title text-[clamp(4rem,9vw,8.8rem)] font-bold uppercase leading-[0.92] tracking-[-0.06em] text-paper">
           {h.title}

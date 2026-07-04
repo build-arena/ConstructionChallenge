@@ -6,7 +6,7 @@
 
 `2026.07 – 2026.08 · BuildArena × Besiege`
 
-[![前往 Kaggle 参赛](https://img.shields.io/badge/%E5%89%8D%E5%BE%80%20Kaggle%20%E5%8F%82%E8%B5%9B-20BEFF?style=flat-square&logo=kaggle)](https://www.kaggle.com/)  [![代码库](https://img.shields.io/badge/%E4%BB%A3%E7%A0%81%E5%BA%93-181717?style=flat-square&logo=github)](https://github.com/AI4Science-WestlakeU/BuildArena)  [![ICML 2026 论文](https://img.shields.io/badge/ICML%202026%20%E8%AE%BA%E6%96%87-B31B1B?style=flat-square)](https://openreview.net/forum?id=QAQKmIp3SZ)  [![Besiege](https://img.shields.io/badge/Besiege-1b2838?style=flat-square&logo=steam)](https://store.steampowered.com/app/346010/)
+[![前往 Kaggle 参赛](https://img.shields.io/badge/%E5%89%8D%E5%BE%80%20Kaggle%20%E5%8F%82%E8%B5%9B-20BEFF?style=flat-square&logo=kaggle)](https://www.kaggle.com/)  [![代码库](https://img.shields.io/badge/%E4%BB%A3%E7%A0%81%E5%BA%93-181717?style=flat-square&logo=github)](https://github.com/build-arena/BuildArena-2.0)  [![ICML 2026 论文](https://img.shields.io/badge/ICML%202026%20%E8%AE%BA%E6%96%87-B31B1B?style=flat-square)](https://openreview.net/forum?id=QAQKmIp3SZ)  [![Besiege](https://img.shields.io/badge/Besiege-1b2838?style=flat-square&logo=steam)](https://store.steampowered.com/app/346010/)
 
 *智能体原生的工程建造竞技场。*
 
@@ -304,7 +304,7 @@ Autopilot：定义好 agent 后由其全自主建造。Copilot：你用自然语
 | 资源 | 链接 |
 | --- | --- |
 | 🏁 **前往 Kaggle 参赛** | https://www.kaggle.com/ |
-| 💻 **代码库** | https://github.com/AI4Science-WestlakeU/BuildArena |
+| 💻 **代码库** | https://github.com/build-arena/BuildArena-2.0 |
 | 🏠 **BuildArena 主页** | https://build-arena.github.io/ |
 | 🎮 **Besiege（Steam）** | https://store.steampowered.com/app/346010/ |
 | 📚 **ICML 2026 论文** | https://openreview.net/forum?id=QAQKmIp3SZ |

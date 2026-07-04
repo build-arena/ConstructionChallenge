@@ -10,7 +10,7 @@ export const LINKS = {
   /** Submission entry — all "submit" CTAs route here. */
   kaggle: "https://www.kaggle.com/",
   /** BuildArena 2.0 code repository. */
-  repo: "https://github.com/AI4Science-WestlakeU/BuildArena",
+  repo: "https://github.com/build-arena/BuildArena-2.0",
   /** Steam — Besiege base game. */
   besiege: "https://store.steampowered.com/app/346010/",
   /** Steam — The Broken Beyond DLC (placeholder). */
