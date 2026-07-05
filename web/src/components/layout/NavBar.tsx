@@ -96,7 +96,7 @@ export function NavBar() {
             size="sm"
             variant="outline"
             onClick={toggle}
-            className="min-w-[4.5rem] justify-center border-ba-blue-light bg-ba-blue/85 px-3 font-pixel text-[0.85rem] tracking-wider text-cyan shadow-[4px_4px_0_rgba(200,16,46,0.85),inset_-3px_-3px_0_rgba(0,0,0,0.45)] hover:border-cyan hover:bg-ba-blue-light hover:text-paper hover:shadow-[0_0_22px_rgba(32,211,216,0.5),4px_4px_0_rgba(200,16,46,0.85)]"
+            className="min-w-[4.5rem] justify-center border-ba-blue-light bg-ba-blue/85 px-3 font-pixel text-[0.85rem] tracking-wider text-cyan shadow-[4px_4px_0_rgba(200,16,46,0.85),inset_-3px_-3px_0_rgba(0,0,0,0.45)] hover:border-cyan hover:bg-ba-blue-light hover:text-paper hover:shadow-[0_0_22px_rgba(32,211,216,0.5),4px_4px_0_rgba(200,16,46,0.85)] max-[470px]:hidden"
             aria-label="Switch language"
           >
             <Languages className="size-4 shrink-0" />
@@ -112,7 +112,10 @@ export function NavBar() {
 
           <Button asChild size="sm" className="hidden min-w-[8rem] justify-center md:flex">
             <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
-              {t.nav.join}
+              {/* Full nav reappears at 1320px but stays tight until ~1442px, so
+                  shorten the label in that band instead of letting it clip. */}
+              <span className="min-[1320px]:max-[1442px]:hidden">{t.nav.join}</span>
+              <span className="hidden min-[1320px]:max-[1442px]:inline">{t.nav.joinShort}</span>
             </a>
           </Button>
 
@@ -147,6 +150,17 @@ export function NavBar() {
                 ))}
               </nav>
               <div className="mt-auto flex flex-col gap-2 p-4">
+                {/* Below 470px the top-bar language button is hidden to make
+                    room for the menu trigger itself, so offer it here instead. */}
+                <Button
+                  variant="outline"
+                  onClick={toggle}
+                  className="hidden justify-center border-ba-blue-light bg-ba-blue/85 font-pixel text-[0.85rem] tracking-wider text-cyan max-[470px]:flex"
+                  aria-label="Switch language"
+                >
+                  <Languages className="size-4 shrink-0" />
+                  {t.nav.switchTo}
+                </Button>
                 <Button asChild>
                   <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
                     {t.nav.join}
