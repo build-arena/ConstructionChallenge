@@ -82,7 +82,7 @@ export function NavBar() {
           </Button>
 
           <Button asChild size="default" variant="outline" className="hidden min-w-[7rem] justify-center sm:flex">
-            <a href={LINKS.paperhomepage} target="_blank" rel="noopener noreferrer">
+            <a href={LINKS.icml2026paper} target="_blank" rel="noopener noreferrer">
               {t.nav.jumpMain}
               <ExternalLink className="size-4 shrink-0" />
             </a>
