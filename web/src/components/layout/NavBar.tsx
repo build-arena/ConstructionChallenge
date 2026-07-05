@@ -110,10 +110,15 @@ export function NavBar() {
             </a>
           </Button>
 
-          <Button asChild size="sm" className="hidden min-w-[8rem] justify-center md:flex">
+          <Button
+            asChild
+            size="sm"
+            className="hidden min-w-[8rem] justify-center md:flex min-[1320px]:max-[1442px]:min-w-[4rem]"
+          >
             <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
               {/* Full nav reappears at 1320px but stays tight until ~1442px, so
-                  shorten the label in that band instead of letting it clip. */}
+                  shorten the label (and its min-width) in that band instead of
+                  letting it clip. */}
               <span className="min-[1320px]:max-[1442px]:hidden">{t.nav.join}</span>
               <span className="hidden min-[1320px]:max-[1442px]:inline">{t.nav.joinShort}</span>
             </a>
