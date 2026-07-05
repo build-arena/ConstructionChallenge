@@ -321,6 +321,8 @@ const en = {
       "BuildArena is an open academic challenge bridging AI research and mechanical engineering simulation.\nIf your organization is interested in co-sponsoring a future season, featuring your brand, we'd love to hear from you.\nAll sponsorships will be used for prize and maintenance.",
     sponsorshipCta: "Get in Touch",
     sponsorshipEmail: "wutailin@westlake.edu.cn",
+    copyEmailLabel: "Copy email address",
+    emailCopied: "Copied!",
   },
   faq: {
     tag: "// 08 — FAQ",
@@ -656,6 +658,8 @@ const zh: Content = {
       "BuildArena 是连接 AI 研究与机械工程仿真的开放学术竞赛。\n如果您的机构有意向共同赞助未来赛季、进行品牌展示，欢迎联系我们。\n所有赞助均会用于比赛奖金和维护。",
     sponsorshipCta: "联系我们",
     sponsorshipEmail: "wutailin@westlake.edu.cn",
+    copyEmailLabel: "复制邮箱地址",
+    emailCopied: "已复制！",
   },
   faq: {
     tag: "// 08 — 常见问题",

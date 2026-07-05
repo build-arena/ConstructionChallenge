@@ -1,5 +1,7 @@
-import { ArrowRight, Mail, ExternalLink } from "lucide-react"
+import { useRef, useState } from "react"
+import { ArrowRight, Check, Copy, Mail, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
 
@@ -7,6 +9,26 @@ export function CtaFooter() {
   const { t } = useI18n()
   const c = t.cta
   const o = t.organizers
+
+  const [copied, setCopied] = useState(false)
+  const [emailTooltipOpen, setEmailTooltipOpen] = useState(false)
+  const copyTimeoutRef = useRef<number | undefined>(undefined)
+
+  const handleCopyEmail = async (email: string) => {
+    try {
+      await navigator.clipboard.writeText(email)
+    } catch {
+      // Clipboard API unavailable (older browser / insecure context) — the
+      // tooltip still surfaces the address so it can be selected by hand.
+    }
+    setCopied(true)
+    setEmailTooltipOpen(true)
+    window.clearTimeout(copyTimeoutRef.current)
+    copyTimeoutRef.current = window.setTimeout(() => {
+      setEmailTooltipOpen(false)
+      setCopied(false)
+    }, 1600)
+  }
 
   return (
     <footer id="join" className="relative scroll-mt-20">
@@ -160,17 +182,40 @@ export function CtaFooter() {
             </div>
             <div className="shrink-0">
               {o.sponsorshipEmail ? (
-                <Button
-                  asChild
-                  size="sm"
-                  variant="outline"
-                  className="border-ba-orange text-ba-orange hover:bg-ba-orange hover:text-space-900"
-                >
-                  <a href={`mailto:${o.sponsorshipEmail}`}>
-                    <Mail className="size-3.5" />
-                    {o.sponsorshipCta}
-                  </a>
-                </Button>
+                <div className="flex items-center gap-2">
+                  <Button
+                    asChild
+                    size="sm"
+                    variant="outline"
+                    className="border-ba-orange text-ba-orange hover:bg-ba-orange hover:text-space-900"
+                  >
+                    <a href={`mailto:${o.sponsorshipEmail}`}>
+                      <Mail className="size-3.5" />
+                      {o.sponsorshipCta}
+                    </a>
+                  </Button>
+                  {/* Hovering (desktop) previews the address; tapping either
+                      device copies it, since touchscreens have no hover. */}
+                  <Tooltip open={emailTooltipOpen} onOpenChange={setEmailTooltipOpen}>
+                    <TooltipTrigger asChild>
+                      <button
+                        type="button"
+                        onClick={() => handleCopyEmail(o.sponsorshipEmail)}
+                        aria-label={o.copyEmailLabel}
+                        className="flex size-8 shrink-0 items-center justify-center border-2 border-ba-orange/50 text-ba-orange transition-colors hover:border-ba-orange hover:bg-ba-orange hover:text-space-900"
+                      >
+                        {copied ? (
+                          <Check className="size-3.5" />
+                        ) : (
+                          <Copy className="size-3.5" />
+                        )}
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      {copied ? o.emailCopied : o.sponsorshipEmail}
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
               ) : (
                 <Button
                   size="sm"
