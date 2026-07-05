@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState, type MouseEvent } from "react"
 import { ExternalLink, Languages, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -7,7 +7,6 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-  SheetClose,
 } from "@/components/ui/sheet"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
@@ -27,6 +26,8 @@ const NAV_ITEMS = [
 export function NavBar() {
   const { t, toggle } = useI18n()
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const pendingScrollId = useRef<string | null>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -34,6 +35,27 @@ export function NavBar() {
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  // The mobile drawer's scroll-lock fights the browser's native anchor
+  // jump if the link navigates while the drawer is still closing. Close
+  // the drawer first, then scroll to the target once the closing
+  // animation (see SheetContent's duration-300) has finished.
+  useEffect(() => {
+    if (menuOpen || !pendingScrollId.current) return
+    const id = pendingScrollId.current
+    pendingScrollId.current = null
+    const timer = window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" })
+    }, 320)
+    return () => window.clearTimeout(timer)
+  }, [menuOpen])
+
+  const handleMobileNavClick = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return
+    event.preventDefault()
+    pendingScrollId.current = id
+    setMenuOpen(false)
+  }
 
   return (
     <header
@@ -95,7 +117,7 @@ export function NavBar() {
           </Button>
 
           {/* Mobile menu */}
-          <Sheet>
+          <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
               <Button
                 size="icon"
@@ -114,14 +136,14 @@ export function NavBar() {
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-4">
                 {NAV_ITEMS.map((item) => (
-                  <SheetClose asChild key={item.id}>
-                    <a
-                      href={`#${item.id}`}
-                      className="border-b border-white/10 py-4 text-base uppercase tracking-wide text-mist transition-colors hover:text-crimson-bright"
-                    >
-                      {t.nav[item.key]}
-                    </a>
-                  </SheetClose>
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={(event) => handleMobileNavClick(event, item.id)}
+                    className="border-b border-white/10 py-4 text-base uppercase tracking-wide text-mist transition-colors hover:text-crimson-bright"
+                  >
+                    {t.nav[item.key]}
+                  </a>
                 ))}
               </nav>
               <div className="mt-auto flex flex-col gap-2 p-4">
