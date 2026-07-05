@@ -35,3 +35,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Internal feedback notes (not part of the site)
+BuildArena v2.0 web端意见汇总/
