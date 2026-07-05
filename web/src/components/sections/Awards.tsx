@@ -117,7 +117,7 @@ export function Awards() {
 
       {/* Academic co-authorship */}
       <div className="mt-10 border-2 border-white/10 bg-secondary/20 p-6">
-        <div className="mb-4 flex items-center gap-3">
+        <div className="mb-4 flex flex-wrap items-center gap-3">
           <GraduationCap className="size-6 shrink-0 text-ba-orange" />
           <h3 className="font-pixel text-[1.2rem] uppercase tracking-wider text-ba-orange">
             {a.academic.title}
