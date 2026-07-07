@@ -42,6 +42,8 @@ const en = {
     hours: "Hrs",
     minutes: "Min",
     seconds: "Sec",
+    remindCta: "Remind Me by Email",
+    remindCaption: "We'll email you the moment Season 1 begins.",
   },
   season: {
     tag: "// 01 — Season",
@@ -406,6 +408,8 @@ const zh: Content = {
     hours: "时",
     minutes: "分",
     seconds: "秒",
+    remindCta: "邮件提醒我",
+    remindCaption: "开赛那一刻，我们会发邮件通知你。",
   },
   season: {
     tag: "// 01 — 赛季",

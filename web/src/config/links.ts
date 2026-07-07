@@ -21,6 +21,8 @@ export const LINKS = {
   lab: "https://ai4s.lab.westlake.edu.cn/",
   /** Contact email. */
   email: "mailto:wutailin@westlake.edu.cn",
+  /** Feishu form — leave an email to get notified when Season 1 kicks off. */
+  seasonReminder: "https://oxgvbje0rda.feishu.cn/share/base/form/shrcn7RnsYhIIVug4P5bWbkB9ae",
 } as const
 
 export type LinkKey = keyof typeof LINKS

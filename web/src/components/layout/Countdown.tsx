@@ -1,5 +1,8 @@
+import { Mail } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { useCountdown } from "@/hooks/CountdownContext"
 import { useI18n } from "@/i18n/I18nContext"
+import { LINKS } from "@/config/links"
 import { cn } from "@/lib/utils"
 
 function pad(value: number) {
@@ -38,6 +41,14 @@ export function Countdown({ className }: { className?: string }) {
           </div>
         ))}
       </div>
+
+      <Button asChild size="lg" className="mt-6 shadow-arcade">
+        <a href={LINKS.seasonReminder} target="_blank" rel="noopener noreferrer">
+          <Mail className="size-4" />
+          {c.remindCta}
+        </a>
+      </Button>
+      <p className="mt-4 text-sm text-steel">{c.remindCaption}</p>
     </div>
   )
 }
