@@ -25,11 +25,13 @@ const I18nContext = createContext<I18nState | null>(null)
 function getInitialLang(): Lang {
   if (typeof window === "undefined") return "en"
 
+  // The site defaults to English for every visitor regardless of browser/
+  // system locale. Only an explicit choice made via the language toggle
+  // (persisted below) should switch it to Chinese.
   const stored = window.localStorage.getItem(STORAGE_KEY)
   if (stored === "en" || stored === "zh") return stored
 
-  const nav = window.navigator.language.toLowerCase()
-  return nav.startsWith("zh") ? "zh" : "en"
+  return "en"
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {
