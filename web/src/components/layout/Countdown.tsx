@@ -32,7 +32,7 @@ export function Countdown({ className }: { className?: string }) {
             <span className="font-pixel text-xl text-paper sm:text-2xl">
               {unit.value}
             </span>
-            <span className="text-[0.6rem] uppercase tracking-widest text-steel">
+            <span className="font-pixel text-[0.6rem] uppercase tracking-widest text-steel">
               {unit.label}
             </span>
           </div>
