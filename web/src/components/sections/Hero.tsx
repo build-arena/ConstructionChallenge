@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { ArrowRight, Download, ExternalLink, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Countdown } from "@/components/layout/Countdown"
+import { useCountdown } from "@/hooks/CountdownContext"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
 
@@ -12,6 +14,7 @@ const TRAILER_WATCH_URL = `https://www.bilibili.com/video/${TRAILER_BVID}`
 export function Hero() {
   const { t, lang } = useI18n()
   const h = t.hero
+  const { hasStarted } = useCountdown()
   const [videoLoaded, setVideoLoaded] = useState(false)
   const mdFile =
     import.meta.env.BASE_URL +
@@ -59,13 +62,17 @@ export function Hero() {
           </p>
         </div>
 
+        {!hasStarted ? <Countdown className="mb-8" /> : null}
+
         <div className="flex flex-col items-center gap-4 sm:flex-row">
-          <Button asChild size="lg" className="shadow-arcade">
-            <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
-              {h.ctaPrimary}
-              <ArrowRight className="size-4" />
-            </a>
-          </Button>
+          {hasStarted ? (
+            <Button asChild size="lg" className="shadow-arcade">
+              <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
+                {h.ctaPrimary}
+                <ArrowRight className="size-4" />
+              </a>
+            </Button>
+          ) : null}
           <Button asChild size="lg" variant="outline">
             <a href="#how">{h.ctaSecondary}</a>
           </Button>

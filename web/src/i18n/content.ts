@@ -36,6 +36,13 @@ const en = {
       watchOn: "Watch on Bilibili",
     },
   },
+  countdown: {
+    kicker: "Season 1 starts in",
+    days: "Days",
+    hours: "Hrs",
+    minutes: "Min",
+    seconds: "Sec",
+  },
   season: {
     tag: "// 01 — Season",
     title: 'Season 1\n"To Infinity, and Beyond"',
@@ -392,6 +399,13 @@ const zh: Content = {
       caption: "《围攻：破碎天际》官方预告片",
       watchOn: "在 B 站观看",
     },
+  },
+  countdown: {
+    kicker: "第一赛季倒计时",
+    days: "天",
+    hours: "时",
+    minutes: "分",
+    seconds: "秒",
   },
   season: {
     tag: "// 01 — 赛季",

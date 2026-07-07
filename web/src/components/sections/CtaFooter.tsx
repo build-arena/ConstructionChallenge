@@ -2,11 +2,14 @@ import { useRef, useState } from "react"
 import { ArrowRight, Check, Copy, Mail, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+import { Countdown } from "@/components/layout/Countdown"
+import { useCountdown } from "@/hooks/CountdownContext"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
 
 export function CtaFooter() {
   const { t } = useI18n()
+  const { hasStarted } = useCountdown()
   const c = t.cta
   const o = t.organizers
 
@@ -40,12 +43,16 @@ export function CtaFooter() {
           </h2>
 
           <div className="mt-16 flex justify-center">
-            <Button asChild size="lg" className="shadow-arcade h-16 px-10 text-xl">
-              <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
-                {c.button}
-                <ArrowRight className="size-5" />
-              </a>
-            </Button>
+            {hasStarted ? (
+              <Button asChild size="lg" className="shadow-arcade h-16 px-10 text-xl">
+                <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
+                  {c.button}
+                  <ArrowRight className="size-5" />
+                </a>
+              </Button>
+            ) : (
+              <Countdown />
+            )}
           </div>
         </div>
       </div>
@@ -239,17 +246,19 @@ export function CtaFooter() {
             {c.linksTitle}
           </p>
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-            {c.links.map((link) => (
-              <a
-                key={link.label}
-                href={LINKS[link.key]}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm uppercase tracking-wide text-mist transition-colors hover:text-crimson-bright"
-              >
-                {link.label}
-              </a>
-            ))}
+            {c.links
+              .filter((link) => hasStarted || link.key !== "kaggle")
+              .map((link) => (
+                <a
+                  key={link.label}
+                  href={LINKS[link.key]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm uppercase tracking-wide text-mist transition-colors hover:text-crimson-bright"
+                >
+                  {link.label}
+                </a>
+              ))}
           </nav>
         </div>
       </div>
