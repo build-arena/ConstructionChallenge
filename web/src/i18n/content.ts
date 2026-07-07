@@ -30,6 +30,11 @@ const en = {
     ctaSecondary: "How it works",
     ctaDownload: "Download MD",
     meta: "2026.07 – 2026.08 · BuildArena × Besiege",
+    video: {
+      playLabel: "Play trailer",
+      caption: "Besiege: The Broken Beyond — Official Trailer",
+      watchOn: "Watch on Bilibili",
+    },
   },
   season: {
     tag: "// 01 — Season",
@@ -382,6 +387,11 @@ const zh: Content = {
     ctaSecondary: "查看参赛流程",
     ctaDownload: "下载 MD 文档",
     meta: "2026.07 – 2026.08 · BuildArena × Besiege",
+    video: {
+      playLabel: "播放预告片",
+      caption: "《围攻：破碎天际》官方预告片",
+      watchOn: "在 B 站观看",
+    },
   },
   season: {
     tag: "// 01 — 赛季",

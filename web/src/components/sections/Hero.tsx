@@ -1,14 +1,22 @@
-import { ArrowRight, Download, ExternalLink } from "lucide-react"
+import { useState } from "react"
+import { ArrowRight, Download, ExternalLink, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
 
+// Besiege: The Broken Beyond — official launch trailer (bilibili BVID).
+const TRAILER_BVID = "BV1psjo63EYw"
+const TRAILER_EMBED_SRC = `https://player.bilibili.com/player.html?bvid=${TRAILER_BVID}&autoplay=1&danmaku=0&high_quality=1`
+const TRAILER_WATCH_URL = `https://www.bilibili.com/video/${TRAILER_BVID}`
+
 export function Hero() {
   const { t, lang } = useI18n()
   const h = t.hero
+  const [videoLoaded, setVideoLoaded] = useState(false)
   const mdFile =
     import.meta.env.BASE_URL +
     (lang === "zh" ? "BuildArena-Challenge-ZH.md" : "BuildArena-Challenge-EN.md")
+  const posterSrc = import.meta.env.BASE_URL + "site_assets/besiege-trailer-poster.jpg"
 
   return (
     <section
@@ -67,6 +75,52 @@ export function Hero() {
               {h.ctaDownload}
             </a>
           </Button>
+        </div>
+
+        <div className="mt-10 w-[min(640px,100%)]">
+          <div className="relative aspect-video w-full overflow-hidden border-2 border-crimson-bright shadow-arcade">
+            {videoLoaded ? (
+              <iframe
+                src={TRAILER_EMBED_SRC}
+                title={h.video.caption}
+                className="absolute inset-0 size-full"
+                allow="autoplay; fullscreen; encrypted-media"
+                allowFullScreen
+              />
+            ) : (
+              <button
+                type="button"
+                onClick={() => setVideoLoaded(true)}
+                aria-label={h.video.playLabel}
+                className="group absolute inset-0 size-full cursor-pointer"
+              >
+                <img
+                  src={posterSrc}
+                  alt=""
+                  className="size-full object-cover"
+                  loading="lazy"
+                />
+                <span className="absolute inset-0 bg-space-900/45 transition-colors group-hover:bg-space-900/25" />
+                <span className="absolute inset-0 flex items-center justify-center">
+                  <span className="flex size-14 items-center justify-center border-2 border-crimson-bright bg-crimson/90 shadow-arcade transition-transform group-hover:scale-110 md:size-16">
+                    <Play className="size-6 fill-paper text-paper md:size-7" />
+                  </span>
+                </span>
+              </button>
+            )}
+          </div>
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs uppercase tracking-widest text-steel">
+            <span>{h.video.caption}</span>
+            <a
+              href={TRAILER_WATCH_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-cyan transition-colors hover:text-crimson-bright"
+            >
+              {h.video.watchOn}
+              <ExternalLink className="size-3" />
+            </a>
+          </div>
         </div>
 
         <p className="mt-8 font-pixel text-[0.85rem] uppercase tracking-wider text-steel">
