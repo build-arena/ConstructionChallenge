@@ -227,6 +227,9 @@
   .shadow-arcade-blue {
     box-shadow: 6px 6px 0 rgba(0, 73, 144, 0.8);
   }
+  .shadow-arcade-orange {
+    box-shadow: 6px 6px 0 rgba(122, 71, 0, 0.85);
+  }
   .shadow-inset-arcade {
     box-shadow: inset -5px -5px 0 rgba(0, 0, 0, 0.4);
   }

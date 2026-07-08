@@ -43,7 +43,9 @@ const en = {
     minutes: "Min",
     seconds: "Sec",
     remindCta: "Remind Me by Email",
-    remindCaption: "We'll email you the moment Season 1 begins.",
+    remindPerkPrefix: "Fill the form, get a",
+    remindPerkHighlight: "FREE",
+    remindPerkSuffix: "Besiege base game Steam key",
   },
   season: {
     tag: "// 01 — Season",
@@ -409,7 +411,9 @@ const zh: Content = {
     minutes: "分",
     seconds: "秒",
     remindCta: "邮件提醒我",
-    remindCaption: "开赛那一刻，我们会发邮件通知你。",
+    remindPerkPrefix: "填写问卷，即可",
+    remindPerkHighlight: "免费",
+    remindPerkSuffix: "领取 Besiege 本体 Steam 激活码",
   },
   season: {
     tag: "// 01 — 赛季",
