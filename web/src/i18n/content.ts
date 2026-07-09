@@ -36,6 +36,16 @@ const en = {
       watchOn: "Watch on Bilibili",
     },
   },
+  gameKey: {
+    ctaLabel: "Get Your Free Steam Key",
+    perkPrefix: "Fill the form, get a",
+    perkHighlight: "FREE",
+    perkSuffix: "Besiege base game Steam key",
+  },
+  flow: {
+    step1: "Step 1 · Claim your key",
+    step2: "Step 2 · Join the competition",
+  },
   countdown: {
     kicker: "Season 1 starts in",
     days: "Days",
@@ -403,6 +413,16 @@ const zh: Content = {
       caption: "《围攻：破碎天际》官方预告片",
       watchOn: "在 B 站观看",
     },
+  },
+  gameKey: {
+    ctaLabel: "领取免费 Steam 激活码",
+    perkPrefix: "填写问卷，即可",
+    perkHighlight: "免费",
+    perkSuffix: "领取 Besiege 本体 Steam 激活码",
+  },
+  flow: {
+    step1: "第一步 · 领取激活码",
+    step2: "第二步 · 报名参赛",
   },
   countdown: {
     kicker: "第一赛季倒计时",

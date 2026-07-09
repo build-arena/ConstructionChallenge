@@ -1,8 +1,7 @@
 import { useState } from "react"
-import { ArrowRight, Download, ExternalLink, Play } from "lucide-react"
+import { ArrowRight, ChevronDown, Download, ExternalLink, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Countdown } from "@/components/layout/Countdown"
-import { useCountdown } from "@/hooks/CountdownContext"
+import { GameKeyOffer } from "@/components/layout/GameKeyOffer"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
 
@@ -14,7 +13,7 @@ const TRAILER_WATCH_URL = `https://www.bilibili.com/video/${TRAILER_BVID}`
 export function Hero() {
   const { t, lang } = useI18n()
   const h = t.hero
-  const { hasStarted } = useCountdown()
+  const f = t.flow
   const [videoLoaded, setVideoLoaded] = useState(false)
   const mdFile =
     import.meta.env.BASE_URL +
@@ -27,7 +26,7 @@ export function Hero() {
       className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24"
     >
       <div className="mx-auto flex w-[min(1100px,calc(100%-48px))] flex-col items-center py-16 text-center">
-        <Button
+        {/* <Button
           asChild
           size="sm"
           className="mb-6 h-auto border-crimson-bright bg-crimson-wine/90 px-4 py-2 font-pixel text-[1rem] uppercase tracking-wider shadow-[0_0_24px_rgba(200,16,46,0.42),6px_6px_0_rgba(0,73,144,0.8)]"
@@ -36,7 +35,7 @@ export function Hero() {
             {h.kicker}
             <ExternalLink className="size-3.5" />
           </a>
-        </Button>
+        </Button> */}
 
         <h1 className="text-shadow-arcade max-w-[980px] font-arcade-title text-[clamp(4rem,9vw,8.8rem)] font-bold uppercase leading-[0.92] tracking-[-0.06em] text-paper">
           {h.title}
@@ -62,26 +61,43 @@ export function Hero() {
           </p>
         </div>
 
-        {!hasStarted ? <Countdown className="mb-8" /> : null}
+        {/* Two-step funnel: claim the free key first, then join on Kaggle.
+            Order and size make the sequence and priority unambiguous —
+            "How it works" / "Download MD" are demoted to plain links below. */}
+        <div className="mt-2 flex flex-col items-center">
+          <span className="font-pixel text-[0.8rem] uppercase tracking-widest text-ba-orange">
+            {f.step1}
+          </span>
+          <GameKeyOffer className="mt-3" />
 
-        <div className="flex flex-col items-center gap-4 sm:flex-row">
-          {hasStarted ? (
-            <Button asChild size="lg" className="shadow-arcade">
-              <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
-                {h.ctaPrimary}
-                <ArrowRight className="size-4" />
-              </a>
-            </Button>
-          ) : null}
-          <Button asChild size="lg" variant="outline">
-            <a href="#how">{h.ctaSecondary}</a>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <a href={mdFile} download>
-              <Download className="size-4" />
-              {h.ctaDownload}
+          <ChevronDown className="mt-4 size-6 text-ba-orange" />
+
+          <span className="mt-2 font-pixel text-[0.8rem] uppercase tracking-widest text-ba-orange">
+            {f.step2}
+          </span>
+          <Button asChild size="lg" className="mt-3 h-14 px-8 text-lg shadow-arcade">
+            <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
+              {h.ctaPrimary}
+              <ArrowRight className="size-5" />
             </a>
           </Button>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm uppercase tracking-wide text-mist">
+            <a href="#how" className="transition-colors hover:text-crimson-bright">
+              {h.ctaSecondary}
+            </a>
+            <span aria-hidden className="text-steel">
+              ·
+            </span>
+            <a
+              href={mdFile}
+              download
+              className="inline-flex items-center gap-1 transition-colors hover:text-crimson-bright"
+            >
+              <Download className="size-3.5" />
+              {h.ctaDownload}
+            </a>
+          </div>
         </div>
 
         <div className="mt-10 w-[min(640px,100%)]">

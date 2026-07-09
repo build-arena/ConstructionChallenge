@@ -1,17 +1,16 @@
 import { useRef, useState } from "react"
-import { ArrowRight, Check, Copy, Mail, ExternalLink } from "lucide-react"
+import { ArrowRight, Check, ChevronDown, Copy, Mail, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
-import { Countdown } from "@/components/layout/Countdown"
-import { useCountdown } from "@/hooks/CountdownContext"
+import { GameKeyOffer } from "@/components/layout/GameKeyOffer"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
 
 export function CtaFooter() {
   const { t } = useI18n()
-  const { hasStarted } = useCountdown()
   const c = t.cta
   const o = t.organizers
+  const f = t.flow
 
   const [copied, setCopied] = useState(false)
   const [emailTooltipOpen, setEmailTooltipOpen] = useState(false)
@@ -42,17 +41,25 @@ export function CtaFooter() {
             {c.title}
           </h2>
 
-          <div className="mt-16 flex justify-center">
-            {hasStarted ? (
-              <Button asChild size="lg" className="shadow-arcade h-16 px-10 text-xl">
-                <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
-                  {c.button}
-                  <ArrowRight className="size-5" />
-                </a>
-              </Button>
-            ) : (
-              <Countdown />
-            )}
+          {/* Same two-step funnel as the Hero: claim the key first, then
+              join on Kaggle — order and size make the sequence unambiguous. */}
+          <div className="mt-12 flex flex-col items-center">
+            <span className="font-pixel text-[0.8rem] uppercase tracking-widest text-ba-orange">
+              {f.step1}
+            </span>
+            <GameKeyOffer className="mt-3" />
+
+            <ChevronDown className="mt-4 size-6 text-ba-orange" />
+
+            <span className="mt-2 font-pixel text-[0.8rem] uppercase tracking-widest text-ba-orange">
+              {f.step2}
+            </span>
+            <Button asChild size="lg" className="mt-3 shadow-arcade h-16 px-10 text-xl">
+              <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
+                {c.button}
+                <ArrowRight className="size-5" />
+              </a>
+            </Button>
           </div>
         </div>
       </div>
@@ -246,19 +253,17 @@ export function CtaFooter() {
             {c.linksTitle}
           </p>
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-            {c.links
-              .filter((link) => hasStarted || link.key !== "kaggle")
-              .map((link) => (
-                <a
-                  key={link.label}
-                  href={LINKS[link.key]}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm uppercase tracking-wide text-mist transition-colors hover:text-crimson-bright"
-                >
-                  {link.label}
-                </a>
-              ))}
+            {c.links.map((link) => (
+              <a
+                key={link.label}
+                href={LINKS[link.key]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm uppercase tracking-wide text-mist transition-colors hover:text-crimson-bright"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
         </div>
       </div>

@@ -2,7 +2,6 @@ import { ArrowRight, FileText, Check } from "lucide-react"
 import { Section, SectionHeading } from "@/components/layout/Section"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { useCountdown } from "@/hooks/CountdownContext"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
 
@@ -46,7 +45,6 @@ function ValidationAnswer({ text }: { text: string }) {
 
 export function Submission() {
   const { t } = useI18n()
-  const { hasStarted } = useCountdown()
   const sb = t.submission
 
   return (
@@ -101,14 +99,12 @@ export function Submission() {
             {sb.ctaRules}
           </a>
         </Button>
-        {hasStarted ? (
-          <Button asChild size="lg" className="shadow-arcade">
-            <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
-              {sb.ctaSubmit}
-              <ArrowRight className="size-4" />
-            </a>
-          </Button>
-        ) : null}
+        <Button asChild size="lg" className="shadow-arcade">
+          <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
+            {sb.ctaSubmit}
+            <ArrowRight className="size-4" />
+          </a>
+        </Button>
       </div>
     </Section>
   )

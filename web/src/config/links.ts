@@ -8,7 +8,7 @@ export const LINKS = {
   /** ICML 2026 conference paper page. */
   icml2026paper: "https://openreview.net/forum?id=QAQKmIp3SZ",
   /** Submission entry — all "submit" CTAs route here. */
-  kaggle: "https://www.kaggle.com/",
+  kaggle: "https://www.kaggle.com/competitions/build-arena-human-ai-colleberation-engineering-challenge",
   /** BuildArena 2.0 code repository. */
   repo: "https://github.com/build-arena/BuildArena-2.0",
   /** Steam — Besiege base game. */
@@ -21,8 +21,12 @@ export const LINKS = {
   lab: "https://ai4s.lab.westlake.edu.cn/",
   /** Contact email. */
   email: "mailto:wutailin@westlake.edu.cn",
-  /** Feishu form — leave an email to get notified when Season 1 kicks off. */
+  /** Feishu form — no longer surfaced; kept only so the (currently unused)
+   *  Countdown component still compiles. See `gameKeyForm` for the same
+   *  form's current purpose. */
   seasonReminder: "https://oxgvbje0rda.feishu.cn/share/base/form/shrcn7RnsYhIIVug4P5bWbkB9ae",
+  /** Feishu form — fill it out to receive a free Besiege base game Steam key. */
+  gameKeyForm: "https://oxgvbje0rda.feishu.cn/share/base/form/shrcn7RnsYhIIVug4P5bWbkB9ae",
 } as const
 
 export type LinkKey = keyof typeof LINKS

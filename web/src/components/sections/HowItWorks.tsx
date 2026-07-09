@@ -1,13 +1,11 @@
 import { ArrowRight, ExternalLink } from "lucide-react"
 import { Section, SectionHeading } from "@/components/layout/Section"
 import { Button } from "@/components/ui/button"
-import { useCountdown } from "@/hooks/CountdownContext"
 import { useI18n } from "@/i18n/I18nContext"
 import { LINKS } from "@/config/links"
 
 export function HowItWorks() {
   const { t, lang } = useI18n()
-  const { hasStarted } = useCountdown()
   const h = t.how
 
   return (
@@ -43,16 +41,14 @@ export function HowItWorks() {
         ))}
       </ol>
 
-      {hasStarted ? (
-        <div className="mt-10 flex justify-center">
-          <Button asChild size="lg" className="shadow-arcade">
-            <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
-              {h.cta}
-              <ArrowRight className="size-4" />
-            </a>
-          </Button>
-        </div>
-      ) : null}
+      <div className="mt-10 flex justify-center">
+        <Button asChild size="lg" className="shadow-arcade">
+          <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
+            {h.cta}
+            <ArrowRight className="size-4" />
+          </a>
+        </Button>
+      </div>
     </Section>
   )
 }
