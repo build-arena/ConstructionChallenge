@@ -133,23 +133,44 @@ const en = {
   },
   how: {
     tag: "// 03 — How it Works",
-    title: "From Fork to Finish Line",
+    title: "3 Steps to the Finish Line",
     intro:
-      "The site is informational, submission happens on Kaggle.\nHere is the full flow.",
-    steps: [
-      { n: "01", title: "Fork the repo", body: "Fork and download the BuildArena 2.0 codebase." },
-      { n: "02", title: "Get the game", body: "Buy and install Besiege + The Broken Beyond DLC." },
-      { n: "03", title: "Configure", body: "Set up game file paths, the MCP server, and MODs." },
-      { n: "04", title: "Pick a track", body: "Choose Build Autopilot or Build Copilot." },
-      { n: "05", title: "Build via MCP", body: "Use the season brief and your own agents to build through the BuildArena MCP." },
-      { n: "06", title: "Save the Build", body: "MCP saves raw BSG, valid + full build-history JSON. DO SAVE the text transcript MD." },
-      { n: "07", title: "Load the BSG", body: "Load the machine in the game sandbox." },
-      { n: "08", title: "Tune controls", body: "Adjust control parameters only, NEVER the structure." },
-      { n: "09", title: "Track trajectory", body: "The injected tracker records the Starting Block path and exports a trajectory CSV." },
-      { n: "10", title: "Drive & record", body: "Manual-drive the machine to complete the task, recording the full run video." },
-      { n: "11", title: "Publish video", body: "Upload to YouTube / Bilibili with #BuildArena #AI4E #Besiege." },
-      { n: "12", title: "Submit on Kaggle", body: "Submit the single machine run you think is best." },
+      "The site is informational, submission happens on Kaggle.\nWe cut the old 12-step walkthrough down to the essentials.",
+    phases: [
+      {
+        key: "prepare",
+        label: "Prepare",
+        steps: [
+          { n: "01", title: "Get the game", body: "Buy Besiege + The Broken Beyond DLC on Steam." },
+          {
+            n: "02",
+            title: "Download BuildArena 2.0",
+            body: "Download the codebase, finish the setup with your agent within 10 min.",
+          },
+        ],
+      },
+      {
+        key: "compete",
+        label: "Compete",
+        steps: [
+          { n: "03", title: "Build via MCP", body: "Use your own agents to build through the BuildArena MCP." },
+          {
+            n: "04",
+            title: "Drive & record",
+            body: "Manually drive the machine to complete the mission.\nDon't forget to record the show!",
+          },
+        ],
+      },
+      {
+        key: "submit",
+        label: "Submit",
+        steps: [
+          { n: "05", title: "Submit on Kaggle", body: "Submit the single machine run you think is best." },
+        ],
+      },
     ],
+    gameKeyCta: "Claim Free Steam Key",
+    repoCta: "Download BuildArena 2.0",
     cta: "Submit on Kaggle",
   },
   scoring: {
@@ -502,22 +523,43 @@ const zh: Content = {
   },
   how: {
     tag: "// 03 — 参与流程",
-    title: "从 Fork 到终点线",
-    intro: "本站仅作信息展示，提交在 Kaggle 完成。\n完整流程如下。",
-    steps: [
-      { n: "01", title: "Fork 代码库", body: "Fork 并下载 BuildArena 2.0 代码库。" },
-      { n: "02", title: "购买游戏", body: "购买并安装 Besiege + The Broken Beyond DLC。" },
-      { n: "03", title: "完成配置", body: "配置游戏文件路径、MCP 服务器与 MOD。" },
-      { n: "04", title: "选择赛道", body: "选择 Build Autopilot 或 Build Copilot。" },
-      { n: "05", title: "通过 MCP 建造", body: "用赛季题目与自定义 agent，通过 BuildArena MCP 执行建造。" },
-      { n: "06", title: "保存建造", body: "MCP 保存原始 BSG、有效与全量建造历史 JSON。务必保存文本记录 MD。" },
-      { n: "07", title: "加载 BSG", body: "在游戏沙盒中加载机械。" },
-      { n: "08", title: "调整控制", body: "仅修改控制参数，绝不能修改结构。" },
-      { n: "09", title: "记录轨迹", body: "注入的跟踪脚本记录 Starting Block 轨迹并导出 trajectory CSV。" },
-      { n: "10", title: "驾驶并录制", body: "手动驾驶机械完成任务，并录制完整运行视频。" },
-      { n: "11", title: "发布视频", body: "上传到 YouTube / Bilibili 并带 #BuildArena #AI4E #Besiege。" },
-      { n: "12", title: "在 Kaggle 提交", body: "提交你认为最好的单次机械运行。" },
+    title: "三步冲线",
+    intro: "本站仅作信息展示，提交在 Kaggle 完成。\n原来 12 步的流程，现在精简成了核心 3 步。",
+    phases: [
+      {
+        key: "prepare",
+        label: "准备",
+        steps: [
+          { n: "01", title: "获取游戏", body: "在 Steam 购买 Besiege + The Broken Beyond DLC。" },
+          {
+            n: "02",
+            title: "下载 BuildArena 2.0",
+            body: "下载代码库，让你的 agent 在 10 分钟内完成配置。",
+          },
+        ],
+      },
+      {
+        key: "compete",
+        label: "比赛",
+        steps: [
+          { n: "03", title: "通过 MCP 建造", body: "用你自己的 agent，通过 BuildArena MCP 执行建造。" },
+          {
+            n: "04",
+            title: "驾驶并记录",
+            body: "手动驾驶机械完成任务。\n别忘了记录这场表演！",
+          },
+        ],
+      },
+      {
+        key: "submit",
+        label: "提交",
+        steps: [
+          { n: "05", title: "在 Kaggle 提交", body: "提交你认为最好的单次机械运行。" },
+        ],
+      },
     ],
+    gameKeyCta: "领取免费激活码",
+    repoCta: "下载 BuildArena 2.0",
     cta: "前往 Kaggle 提交",
   },
   scoring: {
