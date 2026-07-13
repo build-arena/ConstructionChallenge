@@ -51,10 +51,15 @@ export function CtaFooter() {
 
             <ChevronDown className="mt-4 size-6 text-ba-orange" />
 
-            <span className="mt-2 font-pixel text-[0.8rem] uppercase tracking-widest text-ba-orange">
+            <span className="mt-2 font-pixel text-[0.8rem] uppercase tracking-widest text-kaggle-blue-bright">
               {f.step2}
             </span>
-            <Button asChild size="lg" className="mt-3 shadow-arcade h-16 px-10 text-xl">
+            <Button
+              asChild
+              variant="kaggle"
+              size="lg"
+              className="mt-3 shadow-arcade-kaggle h-16 px-10 text-xl"
+            >
               <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
                 {c.button}
                 <ArrowRight className="size-5" />

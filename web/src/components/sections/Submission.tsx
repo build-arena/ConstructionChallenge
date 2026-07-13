@@ -99,7 +99,7 @@ export function Submission() {
             {sb.ctaRules}
           </a>
         </Button>
-        <Button asChild size="lg" className="shadow-arcade">
+        <Button asChild variant="kaggle" size="lg" className="shadow-arcade-kaggle">
           <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
             {sb.ctaSubmit}
             <ArrowRight className="size-4" />

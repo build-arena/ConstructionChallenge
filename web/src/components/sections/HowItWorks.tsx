@@ -42,7 +42,7 @@ export function HowItWorks() {
       </ol>
 
       <div className="mt-10 flex justify-center">
-        <Button asChild size="lg" className="shadow-arcade">
+        <Button asChild variant="kaggle" size="lg" className="shadow-arcade-kaggle">
           <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
             {h.cta}
             <ArrowRight className="size-4" />

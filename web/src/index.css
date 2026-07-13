@@ -58,6 +58,13 @@
   --ba-orange: #f18d00;
   --ba-orange-light: #ffa726;
 
+  /* Kaggle's own brand blue (#20beff) — used only on "go to Kaggle" CTAs
+     so they read as a distinct, instantly-recognizable destination rather
+     than blending into the site's crimson action color everywhere else. */
+  --ba-kaggle-blue: #0e9fdb;
+  --ba-kaggle-blue-bright: #20beff;
+  --ba-kaggle-blue-deep: #0a4e6b;
+
   --ba-ink: #0f1224;
   --ba-paper: #f7f8ff;
   --ba-mist: #d6d9e8;
@@ -142,6 +149,9 @@
   --color-ba-blue-light: var(--ba-blue-light);
   --color-ba-orange: var(--ba-orange);
   --color-ba-orange-light: var(--ba-orange-light);
+  --color-kaggle-blue: var(--ba-kaggle-blue);
+  --color-kaggle-blue-bright: var(--ba-kaggle-blue-bright);
+  --color-kaggle-blue-deep: var(--ba-kaggle-blue-deep);
   --color-ink: var(--ba-ink);
   --color-paper: var(--ba-paper);
   --color-mist: var(--ba-mist);
@@ -162,6 +172,7 @@
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-breathe-kaggle: breathe-kaggle 2.6s ease-in-out infinite;
 
   @keyframes accordion-down {
     from {
@@ -178,6 +189,35 @@
     to {
       height: 0;
     }
+  }
+  /* Slow "breathing LED" glow — reserved for the single highest-priority
+     Kaggle CTA (Hero) so it draws the eye without the whole page flashing.
+     Keeps the button's own inset bevel + offset "sticker" shadow constant
+     across the cycle and only pulses the outer glow layer. */
+  @keyframes breathe-kaggle {
+    0%,
+    100% {
+      box-shadow:
+        inset -3px -3px 0 rgba(10, 40, 54, 0.6),
+        8px 8px 0 var(--ba-kaggle-blue-deep),
+        0 0 16px rgba(32, 190, 255, 0.28);
+    }
+    50% {
+      box-shadow:
+        inset -3px -3px 0 rgba(10, 40, 54, 0.6),
+        8px 8px 0 var(--ba-kaggle-blue-deep),
+        0 0 46px rgba(32, 190, 255, 0.9);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-breathe-kaggle {
+    animation: none;
+    box-shadow:
+      inset -3px -3px 0 rgba(10, 40, 54, 0.6),
+      8px 8px 0 var(--ba-kaggle-blue-deep),
+      0 0 32px rgba(32, 190, 255, 0.35);
   }
 }
 
@@ -229,6 +269,11 @@
   }
   .shadow-arcade-orange {
     box-shadow: 6px 6px 0 rgba(122, 71, 0, 0.85);
+  }
+  .shadow-arcade-kaggle {
+    box-shadow:
+      8px 8px 0 var(--ba-kaggle-blue-deep),
+      0 0 32px rgba(32, 190, 255, 0.35);
   }
   .shadow-inset-arcade {
     box-shadow: inset -5px -5px 0 rgba(0, 0, 0, 0.4);

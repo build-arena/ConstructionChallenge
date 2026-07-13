@@ -11,6 +11,11 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-primary text-primary-foreground border-2 border-crimson-bright shadow-[inset_-3px_-3px_0_rgba(73,0,13,0.7)] hover:bg-crimson-bright hover:shadow-[0_0_22px_rgba(200,16,46,0.55)]",
+        // Kaggle's own brand blue — reserved for CTAs that lead to Kaggle,
+        // so those specific actions stand out from the site's crimson
+        // default and read as an instantly-recognizable destination.
+        kaggle:
+          "bg-kaggle-blue text-white border-2 border-kaggle-blue-bright shadow-[inset_-3px_-3px_0_rgba(10,40,54,0.6)] hover:bg-kaggle-blue-bright hover:shadow-[0_0_22px_rgba(32,190,255,0.55)]",
         destructive:
           "bg-destructive text-white border-2 border-crimson-bright hover:brightness-110",
         outline:

@@ -112,6 +112,7 @@ export function NavBar() {
 
           <Button
             asChild
+            variant="kaggle"
             size="sm"
             className="hidden min-w-[8rem] justify-center md:flex min-[1320px]:max-[1442px]:min-w-[4rem]"
           >
@@ -166,7 +167,7 @@ export function NavBar() {
                   <Languages className="size-4 shrink-0" />
                   {t.nav.switchTo}
                 </Button>
-                <Button asChild>
+                <Button asChild variant="kaggle">
                   <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
                     {t.nav.join}
                   </a>

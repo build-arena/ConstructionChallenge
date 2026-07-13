@@ -72,10 +72,15 @@ export function Hero() {
 
           <ChevronDown className="mt-4 size-6 text-ba-orange" />
 
-          <span className="mt-2 font-pixel text-[0.8rem] uppercase tracking-widest text-ba-orange">
+          <span className="mt-2 font-pixel text-[0.8rem] uppercase tracking-widest text-kaggle-blue-bright">
             {f.step2}
           </span>
-          <Button asChild size="lg" className="mt-3 h-14 px-8 text-lg shadow-arcade">
+          <Button
+            asChild
+            variant="kaggle"
+            size="lg"
+            className="mt-3 h-14 px-8 text-lg animate-breathe-kaggle"
+          >
             <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
               {h.ctaPrimary}
               <ArrowRight className="size-5" />
