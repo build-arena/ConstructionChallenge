@@ -2,7 +2,8 @@
  * export-md.ts
  * Generate English and Chinese Markdown docs from the site's i18n content.
  * Run: npm run export:md
- * Output: BuildArena-Challenge-EN.md / BuildArena-Challenge-ZH.md (repo root)
+ * Output: web/public/BuildArena-Challenge-EN.md / BuildArena-Challenge-ZH.md
+ * (Vite copies public/ into dist/, Hero "Download MD" serves these files)
  */
 
 import { writeFileSync } from "fs"

@@ -4,7 +4,7 @@
 
 **Season 1 · To Infinity, and Beyond**
 
-`2026.07 – 2026.08 · BuildArena × Besiege`
+`2026.07.12 – 2026.09.12 AOE · BuildArena × Besiege`
 
 [![Join on Kaggle](https://img.shields.io/badge/Join%20on%20Kaggle-20BEFF?style=flat-square&logo=kaggle)](https://www.kaggle.com/)  [![Code Repo](https://img.shields.io/badge/Code%20Repo-181717?style=flat-square&logo=github)](https://github.com/build-arena/BuildArena-2.0)  [![ICML 2026 Paper](https://img.shields.io/badge/ICML%202026%20Paper-B31B1B?style=flat-square)](https://openreview.net/forum?id=QAQKmIp3SZ)  [![Besiege](https://img.shields.io/badge/Besiege-1b2838?style=flat-square&logo=steam)](https://store.steampowered.com/app/346010/)
 
@@ -31,7 +31,7 @@
 
 ## 🪐 Season 1 — "To Infinity, and Beyond"
 
-> **Window:** 2026.7 – 2026.8
+> **Window:** 2026.7.12 – 2026.9.12 AOE
 
 ### The Mission
 

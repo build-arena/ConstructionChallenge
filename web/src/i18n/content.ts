@@ -29,7 +29,7 @@ const en = {
     ctaPrimary: "Join on Kaggle",
     ctaSecondary: "How it works",
     ctaDownload: "Download MD",
-    meta: "2026.07 – 2026.08 · BuildArena × Besiege",
+    meta: "2026.07.12 – 2026.09.12 AOE · BuildArena × Besiege",
     video: {
       playLabel: "Play trailer",
       caption: "Besiege: The Broken Beyond — Official Trailer",
@@ -61,7 +61,10 @@ const en = {
     tag: "// 01 — Season",
     title: 'Season 1\n"To Infinity, and Beyond"',
     datesLabel: "Window",
-    dates: "2026.7 – 2026.8",
+    dates: "2026.7.12 – 2026.9.12 AOE",
+    datesFrom: "From",
+    datesTo: "Until",
+    datesTz: "AOE",
     briefTitle: "The Mission",
     brief:
       "Build a single mechanical craft that launches from the starting planet in The Broken Beyond space sandbox, reaches a stable orbit, and completes as many orbital periods as possible.\nThe tracked judgment point is the Starting Block — other parts are unconstrained.\nThe final score combines run performance, build cost, and a track coefficient.",
@@ -428,7 +431,7 @@ const zh: Content = {
     ctaPrimary: "前往 Kaggle 参赛",
     ctaSecondary: "查看参赛流程",
     ctaDownload: "下载 MD 文档",
-    meta: "2026.07 – 2026.08 · BuildArena × Besiege",
+    meta: "2026.07.12 – 2026.09.12 AOE · BuildArena × Besiege",
     video: {
       playLabel: "播放预告片",
       caption: "《围攻：破碎天际》官方预告片",
@@ -460,7 +463,10 @@ const zh: Content = {
     tag: "// 01 — 赛季",
     title: "第一赛季\n「飞向宇宙 浩瀚无垠」",
     datesLabel: "时间",
-    dates: "2026.7 – 2026.8",
+    dates: "2026.7.12 – 2026.9.12 AOE",
+    datesFrom: "开始",
+    datesTo: "截止",
+    datesTz: "AOE",
     briefTitle: "赛题",
     brief:
       "建造单体机械装置，使其在 The Broken Beyond 太空沙盒中从起始星球出发，实现稳定入轨运行，并在星球轨道上完成尽可能多的周期运行。\n轨迹跟踪与判定点为 Starting Block，机械体其他元件不单独约束。\n最终成绩由运行表现、建造成本和赛道系数共同决定。",

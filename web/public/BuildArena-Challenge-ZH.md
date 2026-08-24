@@ -4,7 +4,7 @@
 
 **第一赛季 · 飞向宇宙 浩瀚无垠**
 
-`2026.07 – 2026.08 · BuildArena × Besiege`
+`2026.07.12 – 2026.09.12 AOE · BuildArena × Besiege`
 
 [![前往 Kaggle 参赛](https://img.shields.io/badge/%E5%89%8D%E5%BE%80%20Kaggle%20%E5%8F%82%E8%B5%9B-20BEFF?style=flat-square&logo=kaggle)](https://www.kaggle.com/)  [![代码库](https://img.shields.io/badge/%E4%BB%A3%E7%A0%81%E5%BA%93-181717?style=flat-square&logo=github)](https://github.com/build-arena/BuildArena-2.0)  [![ICML 2026 论文](https://img.shields.io/badge/ICML%202026%20%E8%AE%BA%E6%96%87-B31B1B?style=flat-square)](https://openreview.net/forum?id=QAQKmIp3SZ)  [![Besiege](https://img.shields.io/badge/Besiege-1b2838?style=flat-square&logo=steam)](https://store.steampowered.com/app/346010/)
 
@@ -31,7 +31,7 @@
 
 ## 🪐 第一赛季 — 「飞向宇宙 浩瀚无垠」
 
-> **时间：**2026.7 – 2026.8
+> **时间：**2026.7.12 – 2026.9.12 AOE
 
 ### 赛题
 
