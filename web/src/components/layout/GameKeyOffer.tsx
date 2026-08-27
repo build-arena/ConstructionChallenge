@@ -1,16 +1,28 @@
 import { Gift, KeyRound } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useI18n } from "@/i18n/I18nContext"
+import { GAME_KEY_FORM_OPEN } from "@/config/gameKey"
 import { LINKS } from "@/config/links"
 import { cn } from "@/lib/utils"
 
 /**
- * Standalone "fill the form, get a free Besiege Steam key" callout.
- * Visually lifted from the old countdown's reminder callout (speech-bubble
- * tag + bouncing highlight + CTA) — see Countdown.tsx — but decoupled from
- * countdown state so it can run any time, independent of Season 1's status.
+ * Steam-key callout. Two compiled modes, switched by `GAME_KEY_FORM_OPEN`
+ * in `config/gameKey.ts`:
+ *
+ * - `true`: "fill the form, get a key" speech-bubble + Feishu CTA
+ *   (the original giveaway funnel, kept for a later season).
+ * - `false` (current): season-end notice only, no outbound form.
  */
 export function GameKeyOffer({ className }: { className?: string }) {
+  return GAME_KEY_FORM_OPEN ? (
+    <GameKeyFormOffer className={className} />
+  ) : (
+    <GameKeyNotice className={className} />
+  )
+}
+
+/** Survey funnel — speech-bubble perk + form button. Unused while the flag is off. */
+function GameKeyFormOffer({ className }: { className?: string }) {
   const { t } = useI18n()
   const g = t.gameKey
 
@@ -46,6 +58,25 @@ export function GameKeyOffer({ className }: { className?: string }) {
           {g.ctaLabel}
         </a>
       </Button>
+    </div>
+  )
+}
+
+/** Season-end perk notice — no form CTA. */
+function GameKeyNotice({ className }: { className?: string }) {
+  const { t } = useI18n()
+  const g = t.gameKey
+
+  return (
+    <div className={cn("flex w-[min(32rem,calc(100vw-3rem))] justify-center", className)}>
+      <div className="border-2 border-ba-orange-light bg-ba-orange px-4 py-2.5 text-center shadow-arcade-orange">
+        <span className="inline-flex items-center justify-center gap-3">
+          <Gift className="size-6 shrink-0 text-space-900" strokeWidth={2.25} />
+          <span className="text-center text-[0.8rem] font-bold leading-snug tracking-wide text-space-900 sm:text-[0.9rem]">
+            {g.notice}
+          </span>
+        </span>
+      </div>
     </div>
   )
 }

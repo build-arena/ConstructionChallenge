@@ -112,19 +112,21 @@ line break without needing `<br/>`.
 - **`Organizers.tsx` is unused/dead.** Its content was superseded by an inline block in
   `CtaFooter.tsx` (`id="organizers"`). Don't edit `Organizers.tsx` expecting it to affect the
   site — it doesn't render anywhere.
-- **`GameKeyOffer.tsx`** (an orange "fill this form, get a free Besiege Steam key"
-  callout+button, linking to `LINKS.gameKeyForm`, a Feishu form) is reused in both `Hero.tsx`
-  and `HowItWorks.tsx`/`CtaFooter.tsx` contexts. It has a hand-rolled CSS speech-bubble tail
-  (a rotated square, bordered only on two adjacent edges + clipped via an `overflow-hidden`
-  wrapper) — if you need another pointer/tail shape elsewhere, copy that technique, it avoids
-  the classic double-border-seam artifact of the naive version.
+- **`GameKeyOffer.tsx`** has two compiled modes, switched by `GAME_KEY_FORM_OPEN` in
+  `config/gameKey.ts` (currently `false`). `false` = season-end notice only (valid submit
+  earns a complimentary Besiege Steam key), reused in `Hero.tsx` and `CtaFooter.tsx`.
+  `true` = original "fill the form, get a key" speech-bubble + Feishu CTA + Hero/footer
+  two-step funnel + How-it-works step-01 button. Flip the flag to restore that funnel —
+  don't re-implement it. The speech-bubble tail is a rotated square, bordered only on two
+  adjacent edges + clipped via an `overflow-hidden` wrapper, which avoids the classic
+  double-border-seam artifact.
 - **`HowItWorks.tsx`** groups its 5 steps into 3 color-coded phases (Prepare/orange,
   Compete/crimson, Submit/kaggle-blue) via a `PHASE_STYLES` lookup keyed by `phase.key`, laid
   out as 3 equal-height grid columns on `md:`+. The Kaggle submit button lives *inside* the
   Submit column (not a separate section below), centered in the leftover vertical space.
-- **`LINKS.seasonReminder` and `LINKS.gameKeyForm`** point to the literal same Feishu form URL
-  — `seasonReminder` is legacy (kept only so `Countdown.tsx` still compiles), `gameKeyForm` is
-  the current, actually-used key. Use `gameKeyForm` for anything new.
+- **`LINKS.seasonReminder` and `LINKS.gameKeyForm`** point to the literal same Feishu form URL.
+  `seasonReminder` is legacy (kept so `Countdown.tsx` still compiles). `gameKeyForm` is the
+  current named key — linked from the live site only when `GAME_KEY_FORM_OPEN` is true.
 - No backend exists or can exist (GitHub Pages, pure static). Anything requiring
   storage/email-sending was solved by delegating to a third-party form (Feishu) rather than
   building infra — keep that pattern in mind if asked for similar "collect X from users"

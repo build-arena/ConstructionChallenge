@@ -37,6 +37,7 @@ const en = {
     },
   },
   gameKey: {
+    notice: "Valid submit at season end earns an extra free Besiege Steam key",
     ctaLabel: "Get Your Free Steam Key",
     perkPrefix: "Fill the form, get a",
     perkHighlight: "FREE",
@@ -168,11 +169,16 @@ const en = {
         key: "submit",
         label: "Submit",
         steps: [
-          { n: "05", title: "Submit on Kaggle", body: "Submit the single machine run you think is best." },
+          {
+            n: "05",
+            title: "Submit on Kaggle",
+            body: "Submit the single machine run you think is best.\nA valid submission at season end earns a complimentary Steam key.",
+          },
         ],
       },
     ],
     gameKeyCta: "Claim Free Steam Key",
+    submitBodyForm: "Submit the single machine run you think is best.",
     repoCta: "Download BuildArena 2.0",
     cta: "Submit on Kaggle",
   },
@@ -385,6 +391,14 @@ const en = {
       { q: "How is token usage measured?", a: "Three tiers: official Token Logger > model API usage fields > offline estimation.\nAward candidates need a credible token record." },
       { q: "Where do I submit?", a: "On Kaggle. This site is informational only." },
     ],
+    steamKeyClosed: {
+      q: "How do I get a free Steam key?",
+      a: "The survey giveaway has closed. Anyone with a valid submission at the end of the season will receive a complimentary Besiege Steam key.",
+    },
+    steamKeyForm: {
+      q: "How do I get a free Steam key?",
+      a: "Fill the form on this page (or in How it Works) to claim a free Besiege base-game Steam key.",
+    },
   },
   cta: {
     title: "Ready to build\nwith your agents?",
@@ -439,6 +453,7 @@ const zh: Content = {
     },
   },
   gameKey: {
+    notice: "赛季结束时的有效提交，将额外获赠一个 Besiege Steam 游戏激活码",
     ctaLabel: "领取免费 Steam 激活码",
     perkPrefix: "填写问卷，即可",
     perkHighlight: "免费",
@@ -560,11 +575,16 @@ const zh: Content = {
         key: "submit",
         label: "提交",
         steps: [
-          { n: "05", title: "在 Kaggle 提交", body: "提交你认为最好的单次机械运行。" },
+          {
+            n: "05",
+            title: "在 Kaggle 提交",
+            body: "提交你认为最好的单次机械运行。\n赛季结束时具有有效提交的，会获赠游戏激活码一份。",
+          },
         ],
       },
     ],
     gameKeyCta: "领取免费激活码",
+    submitBodyForm: "提交你认为最好的单次机械运行。",
     repoCta: "下载 BuildArena 2.0",
     cta: "前往 Kaggle 提交",
   },
@@ -772,6 +792,14 @@ const zh: Content = {
       { q: "Token 用量如何统计？", a: "三优先级：官方 Token Logger ＞ 模型 API usage 字段 ＞ 离线估算。\n获奖候选需可信 token 记录。" },
       { q: "在哪里提交？", a: "在 Kaggle 提交。本站仅作信息展示。" },
     ],
+    steamKeyClosed: {
+      q: "如何领取免费 Steam 激活码？",
+      a: "问卷领取通道已关闭。赛季结束时的有效提交，将额外获赠一个 Besiege Steam 激活码。",
+    },
+    steamKeyForm: {
+      q: "如何领取免费 Steam 激活码？",
+      a: "填写本页或「参与流程」中的问卷，即可领取 Besiege 本体 Steam 激活码。",
+    },
   },
   cta: {
     title: "准备好和你的 agents\n一起建造了吗？",

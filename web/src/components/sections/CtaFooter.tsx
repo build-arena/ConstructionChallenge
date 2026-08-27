@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { GameKeyOffer } from "@/components/layout/GameKeyOffer"
 import { useI18n } from "@/i18n/I18nContext"
+import { GAME_KEY_FORM_OPEN } from "@/config/gameKey"
 import { LINKS } from "@/config/links"
 
 export function CtaFooter() {
@@ -41,19 +42,22 @@ export function CtaFooter() {
             {c.title}
           </h2>
 
-          {/* Same two-step funnel as the Hero: claim the key first, then
-              join on Kaggle — order and size make the sequence unambiguous. */}
+          {/* Same layout as the Hero. Flip GAME_KEY_FORM_OPEN. */}
           <div className="mt-12 flex flex-col items-center">
-            <span className="font-pixel text-[0.8rem] uppercase tracking-widest text-ba-orange">
-              {f.step1}
-            </span>
-            <GameKeyOffer className="mt-3" />
-
-            <ChevronDown className="mt-4 size-6 text-ba-orange" />
-
-            <span className="mt-2 font-pixel text-[0.8rem] uppercase tracking-widest text-kaggle-blue-bright">
-              {f.step2}
-            </span>
+            {GAME_KEY_FORM_OPEN ? (
+              <>
+                <span className="font-pixel text-[0.8rem] uppercase tracking-widest text-ba-orange">
+                  {f.step1}
+                </span>
+                <GameKeyOffer className="mt-3" />
+                <ChevronDown className="mt-4 size-6 text-ba-orange" />
+                <span className="mt-2 font-pixel text-[0.8rem] uppercase tracking-widest text-kaggle-blue-bright">
+                  {f.step2}
+                </span>
+              </>
+            ) : (
+              <GameKeyOffer className="mb-5" />
+            )}
             <Button
               asChild
               variant="kaggle"

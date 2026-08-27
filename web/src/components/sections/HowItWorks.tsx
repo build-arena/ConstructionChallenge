@@ -2,6 +2,7 @@ import { ArrowRight, Download, KeyRound } from "lucide-react"
 import { Section, SectionHeading } from "@/components/layout/Section"
 import { Button } from "@/components/ui/button"
 import { useI18n } from "@/i18n/I18nContext"
+import { GAME_KEY_FORM_OPEN } from "@/config/gameKey"
 import { LINKS } from "@/config/links"
 import { cn } from "@/lib/utils"
 
@@ -64,9 +65,11 @@ export function HowItWorks() {
                         {step.title}
                       </h3>
                       <p className="mt-1.5 text-sm leading-snug text-mist">
-                        {step.body}
+                        {step.n === "05" && GAME_KEY_FORM_OPEN
+                          ? h.submitBodyForm
+                          : step.body}
                       </p>
-                      {step.n === "01" ? (
+                      {step.n === "01" && GAME_KEY_FORM_OPEN ? (
                         <Button
                           asChild
                           size="sm"

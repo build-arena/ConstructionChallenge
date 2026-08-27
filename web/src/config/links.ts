@@ -25,7 +25,8 @@ export const LINKS = {
    *  Countdown component still compiles. See `gameKeyForm` for the same
    *  form's current purpose. */
   seasonReminder: "https://oxgvbje0rda.feishu.cn/share/base/form/shrcn7RnsYhIIVug4P5bWbkB9ae",
-  /** Feishu form — fill it out to receive a free Besiege base game Steam key. */
+  /** Feishu form — Steam-key survey. Linked from the live site only when
+   *  `GAME_KEY_FORM_OPEN` is true in `config/gameKey.ts`. */
   gameKeyForm: "https://oxgvbje0rda.feishu.cn/share/base/form/shrcn7RnsYhIIVug4P5bWbkB9ae",
 } as const
 

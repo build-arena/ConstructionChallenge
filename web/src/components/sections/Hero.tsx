@@ -3,6 +3,7 @@ import { ArrowRight, ChevronDown, Download, ExternalLink, Play } from "lucide-re
 import { Button } from "@/components/ui/button"
 import { GameKeyOffer } from "@/components/layout/GameKeyOffer"
 import { useI18n } from "@/i18n/I18nContext"
+import { GAME_KEY_FORM_OPEN } from "@/config/gameKey"
 import { LINKS } from "@/config/links"
 
 // Besiege: The Broken Beyond — official launch trailer (bilibili BVID).
@@ -61,20 +62,23 @@ export function Hero() {
           </p>
         </div>
 
-        {/* Two-step funnel: claim the free key first, then join on Kaggle.
-            Order and size make the sequence and priority unambiguous —
-            "How it works" / "Download MD" are demoted to plain links below. */}
+        {/* Form-open: two-step funnel (claim key, then join). Form-closed:
+            season-end notice + Kaggle only. Flip GAME_KEY_FORM_OPEN. */}
         <div className="mt-2 flex flex-col items-center">
-          <span className="font-pixel text-[0.8rem] uppercase tracking-widest text-ba-orange">
-            {f.step1}
-          </span>
-          <GameKeyOffer className="mt-3" />
-
-          <ChevronDown className="mt-4 size-6 text-ba-orange" />
-
-          <span className="mt-2 font-pixel text-[0.8rem] uppercase tracking-widest text-kaggle-blue-bright">
-            {f.step2}
-          </span>
+          {GAME_KEY_FORM_OPEN ? (
+            <>
+              <span className="font-pixel text-[0.8rem] uppercase tracking-widest text-ba-orange">
+                {f.step1}
+              </span>
+              <GameKeyOffer className="mt-3" />
+              <ChevronDown className="mt-4 size-6 text-ba-orange" />
+              <span className="mt-2 font-pixel text-[0.8rem] uppercase tracking-widest text-kaggle-blue-bright">
+                {f.step2}
+              </span>
+            </>
+          ) : (
+            <GameKeyOffer className="mb-5" />
+          )}
           <Button
             asChild
             variant="kaggle"
