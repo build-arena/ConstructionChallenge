@@ -16,8 +16,10 @@ export function Tracks() {
       <SectionHeading tag={tr.tag} title={tr.title} intro={tr.intro} />
 
       <div className="grid gap-6 lg:grid-cols-3">
-        {tr.items.map((item, i) => {
-          const official = i < 2
+        {tr.items.map((item) => {
+          // S02 groups Autopilot/Copilot under Build with Agent; Human BOSS is separate.
+          const official = item.name !== "Human Boss Challenge"
+          const hasCoefficient = official && item.badge.startsWith("×")
           return (
             <Card
               key={item.name}
@@ -33,7 +35,7 @@ export function Tracks() {
                   {item.name}
                 </h3>
                 <Badge variant={item.badgeVariant as BadgeVariant}>
-                  {official ? `${tr.coefficientLabel} ${item.badge}` : item.badge}
+                  {hasCoefficient ? `${tr.coefficientLabel} ${item.badge}` : item.badge}
                 </Badge>
               </div>
 
