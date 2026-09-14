@@ -14,10 +14,10 @@ function merge(base: AnyObject, updates: AnyObject): AnyObject {
 
 const enPatch = {
   hero: {
-    kicker: "BuildArena 2.0 · Season 02",
-    title: "Construction\nChallenge",
-    season: "Season 02 · Of Course I Still Love You 🚀❤️",
-    subtitle: "BuildArena Construction Challenge S02",
+    kicker: "BuildArena · Community Hackathon · Unlaunched",
+    title: "BuildArena - Human AI\nEngineering Challenge S02",
+    season: "BuildArena Construction Challenge S02: Of Course I Still Love You 🚀❤️",
+    subtitle: "Getting to orbit was just the warm-up. Now bring the machine home.",
     sloganWrong: "Human pilots the machine",
     sloganRight: "Your agent closes the loop",
     notice: "Build. Fly. Observe. Improve.",
@@ -136,7 +136,7 @@ const enPatch = {
 }
 
 const zhPatch = {
-  hero: { kicker: "BuildArena 2.0 · 第二赛季", title: "Construction\nChallenge", season: "第二赛季 · Of Course I Still Love You 🚀❤️", subtitle: "BuildArena Construction Challenge S02", sloganWrong: "人类驾驶机器", sloganRight: "让 agent 完成闭环", notice: "建造 · 飞行 · 观察 · 改进", ctaPrimary: "进入第二赛季", meta: "2026.09.20 – 2026.11.20 AOE · BuildArena × Besiege" },
+  hero: { kicker: "BuildArena 2.0 · 第二赛季", title: "BuildArena - Human AI\nEngineering Challenge S02", season: "第二赛季 · Of Course I Still Love You 🚀❤️", subtitle: "Getting to orbit was just the warm-up. Now bring the machine home.", sloganWrong: "人类驾驶机器", sloganRight: "让 agent 完成闭环", notice: "建造 · 飞行 · 观察 · 改进", ctaPrimary: "进入第二赛季", meta: "2026.09.20 – 2026.11.20 AOE · BuildArena × Besiege" },
   gameKey: { notice: "需要 Besiege + The Broken Beyond DLC · Steam 激活码通过官方表单获取", ctaLabel: "获取游戏" },
   flow: { step1: "01 · 获取游戏", step2: "02 · 进入第二赛季" },
   season: { tag: "// 01 — 第二赛季", title: "第二赛季\n「Of Course I Still Love You」", dates: "2026.09.20 – 2026.11.20 AOE", datesLabel: "比赛时间", datesFrom: "2026 年 9 月 20 日", datesTo: "2026 年 11 月 20 日", datesTz: "AOE（UTC−12）", briefTitle: "BuildArena Construction Challenge S02", brief: "成功入轨只是热身。现在，把机器带回家。\n\n第一赛季：AI agent 建造机器，人类负责驾驶。\n\n第二赛季，我们把控制权交给 agent。\n\n你的 agent 设计载具、完成建造、编写控制器、启动仿真、观察 telemetry、诊断失败、修改设计并再次尝试。\n\n欢迎来到闭环工程。\n\n建造 · 飞行 · 观察 · 改进。\n\n第二赛季引入 ba-control：为 BuildArena 创建的机器提供可编程控制、实时 telemetry 与自动化仿真。agent 通过 BuildArena MCP 建造、启动 Besiege、操作机器、检查飞行、修改控制器或载具并运行下一次实验。\n\n任务：交付、分离、返回。释放无动力载荷，使其完成三圈有效轨道，并尽可能将发射硬件完整带回发射点附近；三圈是进入竞争评分的门槛。", hooksTitle: "第二赛季闭环", hooks: [{ title: "设计 → 建造", body: "先准备工程系统，再由 agent 通过 BuildArena MCP 创建载具。" }, { title: "飞行 → 观察", body: "agent 启动仿真、控制机器并读取实时 telemetry。" }, { title: "诊断 → 改进", body: "把失败当作证据：修改控制器或载具，运行下一次实验。" }] },
