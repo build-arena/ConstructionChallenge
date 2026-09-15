@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { GameKeyOffer } from "@/components/layout/GameKeyOffer"
 import { useI18n } from "@/i18n/I18nContext"
-import { GAME_KEY_FORM_OPEN } from "@/config/gameKey"
+import { isGameKeyFormOpen } from "@/config/gameKey"
 import { LINKS } from "@/config/links"
 
 export function CtaFooter() {
-  const { t } = useI18n()
+  const { t, season, kaggleUrl } = useI18n()
   const c = t.cta
   const o = t.organizers
   const f = t.flow
@@ -42,9 +42,9 @@ export function CtaFooter() {
             {c.title}
           </h2>
 
-          {/* Same layout as the Hero. Flip GAME_KEY_FORM_OPEN. */}
+          {/* Same layout as the Hero. Flip isGameKeyFormOpen(season). */}
           <div className="mt-12 flex flex-col items-center">
-            {GAME_KEY_FORM_OPEN ? (
+            {isGameKeyFormOpen(season) ? (
               <>
                 <span className="font-pixel text-[0.8rem] uppercase tracking-widest text-ba-orange">
                   {f.step1}
@@ -64,7 +64,7 @@ export function CtaFooter() {
               size="lg"
               className="mt-3 shadow-arcade-kaggle h-16 px-10 text-xl"
             >
-              <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
+              <a href={kaggleUrl} target="_blank" rel="noopener noreferrer">
                 {c.button}
                 <ArrowRight className="size-5" />
               </a>
@@ -265,7 +265,7 @@ export function CtaFooter() {
             {c.links.map((link) => (
               <a
                 key={link.label}
-                href={LINKS[link.key]}
+                href={link.key === "kaggle" ? kaggleUrl : LINKS[link.key]}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm uppercase tracking-wide text-mist transition-colors hover:text-crimson-bright"

@@ -1,7 +1,7 @@
 import { Gift, KeyRound } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useI18n } from "@/i18n/I18nContext"
-import { GAME_KEY_FORM_OPEN } from "@/config/gameKey"
+import { isGameKeyFormOpen } from "@/config/gameKey"
 import { LINKS } from "@/config/links"
 import { cn } from "@/lib/utils"
 
@@ -14,7 +14,8 @@ import { cn } from "@/lib/utils"
  * - `false` (current): season-end notice only, no outbound form.
  */
 export function GameKeyOffer({ className }: { className?: string }) {
-  return GAME_KEY_FORM_OPEN ? (
+  const { season } = useI18n()
+  return isGameKeyFormOpen(season) ? (
     <GameKeyFormOffer className={className} />
   ) : (
     <GameKeyNotice className={className} />
@@ -23,7 +24,7 @@ export function GameKeyOffer({ className }: { className?: string }) {
 
 /** Survey funnel — speech-bubble perk + form button. Unused while the flag is off. */
 function GameKeyFormOffer({ className }: { className?: string }) {
-  const { t } = useI18n()
+  const { t, season } = useI18n()
   const g = t.gameKey
 
   return (
@@ -34,7 +35,7 @@ function GameKeyFormOffer({ className }: { className?: string }) {
           <span className="text-[0.7rem] font-bold uppercase leading-snug tracking-wide text-space-900 sm:text-[0.8rem]">
             {g.perkPrefix}
           </span>
-          <span className="inline-block animate-bounce text-sm font-black uppercase leading-snug tracking-wide text-space-900 [text-shadow:1px_1px_0_rgba(255,255,255,0.5)] sm:text-base">
+          <span className="inline-block animate-bounce motion-reduce:animate-none text-sm font-black uppercase leading-snug tracking-wide text-space-900 [text-shadow:1px_1px_0_rgba(255,255,255,0.5)] sm:text-base">
             {g.perkHighlight}
           </span>
           <span className="text-[0.7rem] font-bold uppercase leading-snug tracking-wide text-space-900 sm:text-[0.8rem]">
@@ -52,6 +53,7 @@ function GameKeyFormOffer({ className }: { className?: string }) {
         </span>
       </div>
 
+      {season === "s2" && <p className="mt-5 text-xs leading-relaxed text-mist">{g.notice}</p>}
       <Button asChild size="lg" className="mt-5 shadow-arcade">
         <a href={LINKS.gameKeyForm} target="_blank" rel="noopener noreferrer">
           <KeyRound className="size-4" />

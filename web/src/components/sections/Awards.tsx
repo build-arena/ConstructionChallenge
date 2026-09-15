@@ -7,7 +7,7 @@ import { useI18n } from "@/i18n/I18nContext"
 const MAIN_ICONS = [Crown, Award, Sparkles]
 
 export function Awards() {
-  const { t } = useI18n()
+  const { t, season } = useI18n()
   const a = t.awards
 
   return (
@@ -91,7 +91,7 @@ export function Awards() {
           <h3 className="mb-5 font-pixel text-[1.2rem] uppercase tracking-wider text-ba-orange">
             {a.communityTitle}
           </h3>
-          <div className="grid flex-1 grid-rows-4 gap-3">
+          <div className={season === "s2" ? "grid flex-1 auto-rows-fr gap-3" : "grid flex-1 grid-rows-4 gap-3"}>
             {a.community.map((c) => (
               <div
                 key={c.name}
@@ -115,7 +115,8 @@ export function Awards() {
         {a.dedupe}
       </p>
 
-      {/* Academic co-authorship */}
+      {/* Season 1 academic co-authorship */}
+      {season === "s1" && (
       <div className="mt-10 border-2 border-white/10 bg-secondary/20 p-6">
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <GraduationCap className="size-6 shrink-0 text-ba-orange" />
@@ -142,6 +143,7 @@ export function Awards() {
           {a.academic.adoptionNote}
         </p>
       </div>
+      )}
     </Section>
   )
 }

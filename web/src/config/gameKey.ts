@@ -8,3 +8,8 @@
  * Both UIs stay compiled. Flip this flag — don't re-implement the form.
  */
 export const GAME_KEY_FORM_OPEN = false
+
+/** Reuse the survey funnel for Season 2 without reopening Season 1. */
+export function isGameKeyFormOpen(season: "s1" | "s2") {
+  return season === "s2" || GAME_KEY_FORM_OPEN
+}

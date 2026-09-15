@@ -2,8 +2,9 @@ import { ArrowRight, Download, KeyRound } from "lucide-react"
 import { Section, SectionHeading } from "@/components/layout/Section"
 import { Button } from "@/components/ui/button"
 import { useI18n } from "@/i18n/I18nContext"
-import { GAME_KEY_FORM_OPEN } from "@/config/gameKey"
+import { isGameKeyFormOpen } from "@/config/gameKey"
 import { LINKS } from "@/config/links"
+import { setupContent } from "@/i18n/season2"
 import { cn } from "@/lib/utils"
 
 // Each phase gets one accent color, used consistently for its border, its
@@ -17,7 +18,7 @@ const PHASE_STYLES: Record<string, { border: string; accent: string }> = {
 }
 
 export function HowItWorks() {
-  const { t } = useI18n()
+  const { t, lang, season, kaggleUrl } = useI18n()
   const h = t.how
 
   return (
@@ -65,11 +66,11 @@ export function HowItWorks() {
                         {step.title}
                       </h3>
                       <p className="mt-1.5 text-sm leading-snug text-mist">
-                        {step.n === "05" && GAME_KEY_FORM_OPEN
+                        {step.n === "05" && isGameKeyFormOpen(season)
                           ? h.submitBodyForm
                           : step.body}
                       </p>
-                      {step.n === "01" && GAME_KEY_FORM_OPEN ? (
+                      {step.n === "01" && isGameKeyFormOpen(season) ? (
                         <Button
                           asChild
                           size="sm"
@@ -84,9 +85,9 @@ export function HowItWorks() {
                       ) : null}
                       {step.n === "02" ? (
                         <Button asChild size="sm" variant="outline" className="mt-3">
-                          <a href={LINKS.repo} target="_blank" rel="noopener noreferrer">
+                          <a href={season === "s2" ? "#setup" : LINKS.repo} target={season === "s2" ? undefined : "_blank"} rel="noopener noreferrer">
                             <Download className="size-3.5" />
-                            {h.repoCta}
+                            {season === "s2" ? setupContent[lang].jump : h.repoCta}
                           </a>
                         </Button>
                       ) : null}
@@ -103,7 +104,7 @@ export function HowItWorks() {
                     size="lg"
                     className="h-[4rem] w-full justify-center text-lg shadow-arcade-kaggle"
                   >
-                    <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
+                    <a href={kaggleUrl} target="_blank" rel="noopener noreferrer">
                       {h.cta}
                       <ArrowRight className="size-5" />
                     </a>
