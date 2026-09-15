@@ -44,7 +44,7 @@ function ValidationAnswer({ text }: { text: string }) {
 }
 
 export function Submission() {
-  const { t } = useI18n()
+  const { t, season, kaggleUrl } = useI18n()
   const sb = t.submission
 
   return (
@@ -95,12 +95,12 @@ export function Submission() {
 
       <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
         <Button asChild variant="outline" size="lg">
-          <a href={LINKS.repo} target="_blank" rel="noopener noreferrer">
+          <a href={season === "s2" ? LINKS.kaggleRules : LINKS.repo} target="_blank" rel="noopener noreferrer">
             {sb.ctaRules}
           </a>
         </Button>
         <Button asChild variant="kaggle" size="lg" className="shadow-arcade-kaggle">
-          <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
+          <a href={kaggleUrl} target="_blank" rel="noopener noreferrer">
             {sb.ctaSubmit}
             <ArrowRight className="size-4" />
           </a>

@@ -4,7 +4,6 @@ import { NavBar } from "@/components/layout/NavBar"
 import { SeasonSwitch } from "@/components/layout/SeasonSwitch"
 import { Hero } from "@/components/sections/Hero"
 import { Season } from "@/components/sections/Season"
-import { S02Details } from "@/components/sections/S02Details"
 import { Tracks } from "@/components/sections/Tracks"
 import { HowItWorks } from "@/components/sections/HowItWorks"
 import { Scoring } from "@/components/sections/Scoring"
@@ -21,7 +20,7 @@ function App() {
         <Background />
         <NavBar />
         <SeasonSwitch />
-        <main><Hero /><Season /><S02Details /><Tracks /><HowItWorks /><Scoring /><Submission /><Awards /><Leaderboard /><Faq /></main>
+        <main><Hero /><Season /><Tracks /><HowItWorks /><Scoring /><Submission /><Awards /><Leaderboard /><Faq /></main>
         <CtaFooter />
       </div>
     </I18nProvider>

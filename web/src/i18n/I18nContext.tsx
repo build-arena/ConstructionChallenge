@@ -1,3 +1,4 @@
+import { LINKS } from "@/config/links"
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react"
 import { content, type Lang, type Content } from "./content"
 import { season2Content } from "./season2"
@@ -7,8 +8,8 @@ type I18nValue = { lang: Lang; setLang: (lang: Lang) => void; toggle: () => void
 type I18nState = Omit<I18nValue, "t" | "kaggleUrl">
 const STORAGE_KEY = "ba-lang"
 const SEASON_STORAGE_KEY = "ba-season"
-const S1_KAGGLE = "https://www.kaggle.com/competitions/build-arena-human-ai-colleberation-engineering-challenge"
-const S2_KAGGLE = "https://www.kaggle.com/competitions/build-arena-human-ai-engineering-challenge"
+const S1_KAGGLE = LINKS.kaggleSeason1
+const S2_KAGGLE = LINKS.kaggle
 const I18nContext = createContext<I18nState | null>(null)
 function getInitialLang(): Lang { if (typeof window === "undefined") return "en"; return window.localStorage.getItem(STORAGE_KEY) === "zh" ? "zh" : "en" }
 function getInitialSeason(): SeasonId { if (typeof window === "undefined") return "s2"; return window.localStorage.getItem(SEASON_STORAGE_KEY) === "s1" ? "s1" : "s2" }

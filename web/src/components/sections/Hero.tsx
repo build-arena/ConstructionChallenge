@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { ArrowRight, ChevronDown, Download, ExternalLink, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { SetupPrompt } from "@/components/layout/SetupPrompt"
 import { GameKeyOffer } from "@/components/layout/GameKeyOffer"
 import { useI18n } from "@/i18n/I18nContext"
-import { GAME_KEY_FORM_OPEN } from "@/config/gameKey"
+import { isGameKeyFormOpen } from "@/config/gameKey"
 import { LINKS } from "@/config/links"
 
 // Besiege: The Broken Beyond — official launch trailer (bilibili BVID).
@@ -12,14 +13,14 @@ const TRAILER_EMBED_SRC = `https://player.bilibili.com/player.html?bvid=${TRAILE
 const TRAILER_WATCH_URL = `https://www.bilibili.com/video/${TRAILER_BVID}`
 
 export function Hero() {
-  const { t, lang } = useI18n()
+  const { t, lang, season, kaggleUrl } = useI18n()
   const h = t.hero
   const f = t.flow
-  const [videoLoaded, setVideoLoaded] = useState(false)
+  const [loadedVideoSeason, setLoadedVideoSeason] = useState<string | null>(null)
   const mdFile =
     import.meta.env.BASE_URL +
     (lang === "zh" ? "BuildArena-Challenge-ZH.md" : "BuildArena-Challenge-EN.md")
-  const posterSrc = import.meta.env.BASE_URL + "site_assets/besiege-trailer-poster.jpg"
+  const posterSrc = season === "s2" ? LINKS.season2VideoPoster : import.meta.env.BASE_URL + "site_assets/besiege-trailer-poster.jpg"
 
   return (
     <section
@@ -63,9 +64,9 @@ export function Hero() {
         </div>
 
         {/* Form-open: two-step funnel (claim key, then join). Form-closed:
-            season-end notice + Kaggle only. Flip GAME_KEY_FORM_OPEN. */}
+            season-end notice + Kaggle only. Flip isGameKeyFormOpen(season). */}
         <div className="mt-2 flex flex-col items-center">
-          {GAME_KEY_FORM_OPEN ? (
+          {isGameKeyFormOpen(season) ? (
             <>
               <span className="font-pixel text-[0.8rem] uppercase tracking-widest text-ba-orange">
                 {f.step1}
@@ -85,7 +86,7 @@ export function Hero() {
             size="lg"
             className="mt-3 h-14 px-8 text-lg animate-breathe-kaggle"
           >
-            <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
+            <a href={kaggleUrl} target="_blank" rel="noopener noreferrer">
               {h.ctaPrimary}
               <ArrowRight className="size-5" />
             </a>
@@ -99,30 +100,32 @@ export function Hero() {
               ·
             </span>
             <a
-              href={mdFile}
-              download
+              href={season === "s2" ? LINKS.kaggleRules : mdFile}
+              download={season === "s1" ? true : undefined}
               className="inline-flex items-center gap-1 transition-colors hover:text-crimson-bright"
             >
               <Download className="size-3.5" />
-              {h.ctaDownload}
+              {season === "s2" ? t.submission.ctaRules : h.ctaDownload}
             </a>
           </div>
         </div>
 
         <div className="mt-10 w-[min(640px,100%)]">
           <div className="relative aspect-video w-full overflow-hidden border-2 border-crimson-bright shadow-arcade">
-            {videoLoaded ? (
+            {loadedVideoSeason === season ? (
               <iframe
-                src={TRAILER_EMBED_SRC}
+                key={season}
+                src={season === "s2" ? LINKS.season2VideoEmbed : TRAILER_EMBED_SRC}
                 title={h.video.caption}
                 className="absolute inset-0 size-full"
-                allow="autoplay; fullscreen; encrypted-media"
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
             ) : (
               <button
                 type="button"
-                onClick={() => setVideoLoaded(true)}
+                onClick={() => setLoadedVideoSeason(season)}
                 aria-label={h.video.playLabel}
                 className="group absolute inset-0 size-full cursor-pointer"
               >
@@ -144,7 +147,7 @@ export function Hero() {
           <div className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs uppercase tracking-widest text-steel">
             <span>{h.video.caption}</span>
             <a
-              href={TRAILER_WATCH_URL}
+              href={season === "s2" ? LINKS.season2Video : TRAILER_WATCH_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-cyan transition-colors hover:text-crimson-bright"
@@ -154,6 +157,8 @@ export function Hero() {
             </a>
           </div>
         </div>
+
+        {season === "s2" && <SetupPrompt key={lang} />}
 
         <p className="mt-8 font-pixel text-[0.85rem] uppercase tracking-wider text-steel">
           {h.meta}

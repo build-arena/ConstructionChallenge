@@ -6,14 +6,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { useI18n } from "@/i18n/I18nContext"
-import { GAME_KEY_FORM_OPEN } from "@/config/gameKey"
+import { isGameKeyFormOpen } from "@/config/gameKey"
 
 export function Faq() {
-  const { t } = useI18n()
+  const { t, season } = useI18n()
   const f = t.faq
   const items = [
     ...f.items,
-    GAME_KEY_FORM_OPEN ? f.steamKeyForm : f.steamKeyClosed,
+    isGameKeyFormOpen(season) ? f.steamKeyForm : f.steamKeyClosed,
   ]
 
   return (

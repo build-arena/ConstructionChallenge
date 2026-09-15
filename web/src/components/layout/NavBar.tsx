@@ -24,7 +24,7 @@ const NAV_ITEMS = [
 ] as const
 
 export function NavBar() {
-  const { t, toggle } = useI18n()
+  const { t, toggle, kaggleUrl } = useI18n()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const pendingScrollId = useRef<string | null>(null)
@@ -116,7 +116,7 @@ export function NavBar() {
             size="sm"
             className="hidden min-w-[8rem] justify-center md:flex min-[1320px]:max-[1442px]:min-w-[4rem]"
           >
-            <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
+            <a href={kaggleUrl} target="_blank" rel="noopener noreferrer">
               {/* Full nav reappears at 1320px but stays tight until ~1442px, so
                   shorten the label (and its min-width) in that band instead of
                   letting it clip. */}
@@ -168,7 +168,7 @@ export function NavBar() {
                   {t.nav.switchTo}
                 </Button>
                 <Button asChild variant="kaggle">
-                  <a href={LINKS.kaggle} target="_blank" rel="noopener noreferrer">
+                  <a href={kaggleUrl} target="_blank" rel="noopener noreferrer">
                     {t.nav.join}
                   </a>
                 </Button>
