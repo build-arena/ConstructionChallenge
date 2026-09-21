@@ -1,3 +1,4 @@
+import { S01Leaderboard } from "./S01Leaderboard"
 import { Trophy } from "lucide-react"
 import { Section } from "@/components/layout/Section"
 import { Badge } from "@/components/ui/badge"
@@ -57,7 +58,8 @@ function LeaderboardTable() {
 }
 
 export function Leaderboard() {
-  const { t } = useI18n()
+  const { t, season } = useI18n()
+  if (season === "s1") return <S01Leaderboard />
   const lb = t.leaderboard
 
   return (
