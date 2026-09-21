@@ -45,7 +45,7 @@ const awards = result.awards.filter(a => a.cash_winner).map(a => {
 const data = {
   season: 'S01', scoreVersion: result.config.score_version,
   sourceSha256: createHash('sha256').update(bytes).digest('hex'),
-  status: 'pending_review',
+  status: 'final',
   summary: { submissions: result.summary.submissions, scored: result.summary.scored, teams: ranking.length, zeroTeams: ranking.filter(r => r.finalScore === 0).length },
   references: { machine: result.config.cost.block_reference, tokens: result.config.cost.token_reference },
   ranking, awards,

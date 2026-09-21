@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { useI18n } from "@/i18n/I18nContext"
 import results from "@/data/s01-results.json"
+import communityAwards from "@/data/s01-community-awards.json"
 
 const MODES = ["overall", "Autopilot", "Copilot", "human"] as const
 type Mode = typeof MODES[number]
@@ -49,11 +50,15 @@ export function S01Leaderboard() {
         ))}
       </div>
 
-      <div className="mb-10">
-        <h3 className="flex items-center gap-3 text-xl font-bold uppercase"><Trophy className="size-5 text-ba-orange" aria-hidden="true" />{c.awards}</h3>
-        <p className="mt-2 text-sm text-mist">{c.awardsNote}</p>
+      {[
+        { title: c.awards, note: c.awardsNote, awards: results.awards },
+        { title: c.communityAwards, note: c.communityAwardsNote, awards: communityAwards },
+      ].map(group => (
+      <div key={group.title} className="mb-10">
+        <h3 className="flex items-center gap-3 text-xl font-bold uppercase"><Trophy className="size-5 text-ba-orange" aria-hidden="true" />{group.title}</h3>
+        <p className="mt-2 text-sm text-mist">{group.note}</p>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {results.awards.map(award => (
+          {group.awards.map(award => (
             <Card key={award.award} className="gap-3 border-t-crimson-bright p-5 shadow-inset-arcade">
               <p className="text-xs font-bold uppercase tracking-wide text-ba-orange">{c.awardNames[award.award as keyof typeof c.awardNames]}</p>
               <p className="break-words text-lg font-bold text-paper">{award.team}</p>
@@ -64,6 +69,7 @@ export function S01Leaderboard() {
           ))}
         </div>
       </div>
+      ))}
 
       <Tabs value={mode} onValueChange={value => setMode(value as Mode)}>
         <TabsList className="max-w-full flex-wrap justify-start">

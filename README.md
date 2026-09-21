@@ -54,7 +54,7 @@ Planning docs: [`docs/CONTENT.md`](docs/CONTENT.md) · [`docs/DESIGN.md`](docs/D
 
 ## Season 1 archive results
 
-The S01 leaderboard uses `web/src/data/s01-results.json`, a public-field snapshot of the scoring repository. The source SHA-256 is included for traceability. All 40 ranked teams are shown; mode/search filters retain global ranks. Awards use the cash recipients after team-level roll-down. Results remain labelled pending review, and community votes are not imported. S02 keeps its existing leaderboard.
+The S01 leaderboard uses `web/src/data/s01-results.json`, a public-field snapshot of the scoring repository. The source SHA-256 is included for traceability. All 40 ranked teams are shown; mode/search filters retain global ranks. Awards use the cash recipients after team-level roll-down. Review is complete; the final S01 results and award winners have been announced on Kaggle. The three organizer-confirmed community recipients are maintained separately in `web/src/data/s01-community-awards.json`; they are not recalculated from the earlier questionnaire or overwritten by the technical-results importer. Community recipients are mutually exclusive with each other and with technical cash recipients. S02 keeps its existing leaderboard.
 
 To refresh from the validated scorer output, run from `web/`:
 

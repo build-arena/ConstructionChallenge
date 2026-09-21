@@ -6,14 +6,16 @@ const en = {
   season1Results: {
     "tag": "// 07 — S01 Archive",
     "title": "Season 01 Leaderboard",
-    "status": "Pending final review",
-    "intro": "The complete technical leaderboard: one selected submission per team, rescored together. These are calculated results; final eligibility and award review are still pending.",
+    "status": "Final results",
+    "intro": "The final Season 01 results: one selected submission per team, rescored together. Review is complete, and the final results and award winners have been announced on Kaggle.",
     "submissions": "Submissions received",
     "scored": "Scored submissions",
     "teams": "Ranked teams",
     "zeroTeams": "Zero-score teams",
     "awards": "Technical award recipients",
-    "awardsNote": "Cash awards after roll-down; one per team. Community awards are not included.",
+    "awardsNote": "Cash awards after roll-down; one per team.",
+    "communityAwards": "Community award recipients",
+    "communityAwardsNote": "Organizer-confirmed recipients. Community and technical cash awards are mutually exclusive by team.",
     "search": "Search teams or machines",
     "searchPlaceholder": "Team, machine or submission ID…",
     "overall": "Overall",
@@ -51,7 +53,10 @@ const en = {
         "Powerful but Brutal": "Powerful but Brutal",
         "Cheap Thrills": "Cheap Thrills",
         "Best Build Autopilot": "Best Build · Autopilot",
-        "Best Build Copilot": "Best Build · Copilot"
+        "Best Build Copilot": "Best Build · Copilot",
+        "Most Creative Machine": "Most Creative Machine",
+        "Funniest Failure": "Funniest Failure",
+        "Community Favorite": "Community Favorite"
     }
 },
   nav: {
@@ -473,14 +478,16 @@ const zh: Content = {
   season1Results: {
     "tag": "// 07 — 第一季存档",
     "title": "第一赛季完整排行榜",
-    "status": "待最终复核",
-    "intro": "技术赛道全榜：每队选定一份有效提交，再进行全局重算。以下为实际计算结果，参赛资格与奖项仍待最终复核。",
+    "status": "最终结果",
+    "intro": "第一季最终结果：每队选定一份有效提交，再进行全局重算。全部复核已完成，最终成绩与获奖名单已在 Kaggle 公布。",
     "submissions": "收到提交",
     "scored": "计分提交",
     "teams": "上榜队伍",
     "zeroTeams": "零分队伍",
     "awards": "技术奖项归属",
-    "awardsNote": "按现金奖递补后的名单，每队最多一项。社区奖暂不列入。",
+    "awardsNote": "按现金奖递补后的名单，每队最多一项。",
+    "communityAwards": "社区奖项归属",
+    "communityAwardsNote": "主办方已确认的获奖名单。社区奖之间、社区奖与技术奖金之间均按队伍互斥。",
     "search": "搜索队伍或机器",
     "searchPlaceholder": "队名、机器名或提交编号…",
     "overall": "总榜",
@@ -518,7 +525,10 @@ const zh: Content = {
         "Powerful but Brutal": "Powerful but Brutal",
         "Cheap Thrills": "Cheap Thrills",
         "Best Build Autopilot": "最佳 Autopilot",
-        "Best Build Copilot": "最佳 Copilot"
+        "Best Build Copilot": "最佳 Copilot",
+        "Most Creative Machine": "最具创意机器",
+        "Funniest Failure": "最搞笑的失败",
+        "Community Favorite": "社区最喜爱"
     }
 },
   nav: {
