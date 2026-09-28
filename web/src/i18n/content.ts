@@ -4,6 +4,40 @@ export type Lang = "en" | "zh"
 
 const en = {
   season1Results: {
+    download: {
+      "title": "Scoring source",
+      "description": "Download the lightweight scorer, fixed configurations and usage guide to calculate scores with your own inputs.",
+      "button": "Download scorer",
+      "scope": "Participant submissions, conversations and verification evidence are not included. Supply your own complete inputs to calculate scores.",
+      "profiles": "Runtime source and configurations only; no tests or sample data.",
+      "guide": "Usage guide (MD)",
+      "checksum": "Download SHA-256",
+      "instructions": "Run locally",
+      "setup": "Extract the ZIP and open a terminal in its folder. Use Python 3.12 or newer; see the guide for input data and native libarchive requirements.",
+      "output": "Scoring your own complete inputs generates result.json and an HTML report under results/corrected/."
+},
+    replay: {
+      "open": "View flight",
+      "close": "Close flight",
+      "title": "Flight replay",
+      "scene": "Interactive 3D flight",
+      "loading": "Loading flight…",
+      "error": "The replay could not load. Check your connection and WebGL support.",
+      "unavailable": "No recorded trajectory available.",
+      "retry": "Retry",
+      "path": "Recorded path",
+      "position": "Aircraft",
+      "timeline": "Flight time",
+      "speed": "Speed",
+      "play": "Play",
+      "pause": "Pause",
+      "zoomIn": "Zoom in",
+      "zoomOut": "Zoom out",
+      "reset": "Reset view",
+      "fullRecording": "Full submitted recording shown. Scoring uses at most the first 900 seconds.",
+      "moduleError": "The replay component could not load. Please refresh the page to try again.",
+      "help": "Recorded 3D Starting Block positions. Drag to orbit · scroll or pinch to zoom · arrow keys to rotate. Press Play to animate."
+},
     "tag": "// 07 — S01 Archive",
     "title": "Season 01 Leaderboard",
     "status": "Final results",
@@ -476,6 +510,40 @@ export type Content = typeof en
 
 const zh: Content = {
   season1Results: {
+    download: {
+      "title": "评分源码",
+      "description": "下载轻量评分代码、固定配置及使用说明，使用自己的输入数据计算分数。",
+      "button": "下载评分代码",
+      "scope": "不包含参赛者原始提交、对话或核验证据。计算分数需自行提供完整输入材料。",
+      "profiles": "仅包含运行源码与配置，不含测试或样例数据。",
+      "guide": "使用说明（MD）",
+      "checksum": "下载 SHA-256 校验文件",
+      "instructions": "本地运行",
+      "setup": "解压 ZIP，在解压目录打开终端，使用 Python 3.12 或更新版本。输入数据和原生 libarchive 依赖要求见使用说明。",
+      "output": "使用自己的完整输入评分后，将在 results/corrected/ 下生成 result.json 和 HTML 报告。"
+},
+    replay: {
+      "open": "查看飞行",
+      "close": "收起回放",
+      "title": "飞行回放",
+      "scene": "可交互三维飞行轨迹",
+      "loading": "正在加载轨迹…",
+      "error": "回放加载失败，请检查网络连接和浏览器 WebGL 支持。",
+      "unavailable": "暂无可用的飞行记录。",
+      "retry": "重试",
+      "path": "完整轨迹",
+      "position": "飞行器",
+      "timeline": "飞行时间",
+      "speed": "倍速",
+      "play": "播放",
+      "pause": "暂停",
+      "zoomIn": "放大",
+      "zoomOut": "缩小",
+      "reset": "重置视角",
+      "fullRecording": "回放展示完整提交记录，评分最多使用前 900 秒。",
+      "moduleError": "回放组件加载失败，请刷新页面重试。",
+      "help": "原始 Starting Block 三维位置记录。拖动旋转 · 滚轮或双指缩放 · 方向键旋转。点击播放开始动画。"
+},
     "tag": "// 07 — 第一季存档",
     "title": "第一赛季完整排行榜",
     "status": "最终结果",

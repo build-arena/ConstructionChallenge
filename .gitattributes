@@ -1,0 +1,4 @@
+# Keep downloadable asset bytes stable across Git checkouts.
+web/public/downloads/s01/*.md text eol=lf
+web/public/downloads/s01/*.zip -text
+web/public/trajectories/s01/*.bin -text
