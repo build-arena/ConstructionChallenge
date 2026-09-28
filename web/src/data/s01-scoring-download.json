@@ -1,0 +1,11 @@
+{
+  "version": "S01-center-corrected-v2",
+  "contents": "source-only",
+  "distribution": "runtime",
+  "file": "downloads/s01/BuildArena-S01-scoring-c3c5b2e63c0a.zip",
+  "bytes": 64537,
+  "sha256": "c3c5b2e63c0ab02e8e4b47ad0a3eac53a1a71f41cd8a940bac20a2070468383f",
+  "checksum": "downloads/s01/BuildArena-S01-scoring-c3c5b2e63c0a.zip.sha256",
+  "guide": "downloads/s01/SCORING_GUIDE.md",
+  "guideSha256": "31a21710ce064bbab7aadf1ae1c9bc9da5eadd01a5cf18dcbd241c205d0b0574"
+}

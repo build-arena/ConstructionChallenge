@@ -1,5 +1,7 @@
-import { useState } from "react"
-import { ExternalLink, Trophy } from "lucide-react"
+import { Fragment, lazy, Suspense, useState } from "react"
+import { ChevronDown, ExternalLink, Orbit, Trophy } from "lucide-react"
+import { ReplayBoundary } from "@/components/replay/ReplayBoundary"
+import { ScoringDownload } from "./ScoringDownload"
 import { Section } from "@/components/layout/Section"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
@@ -8,6 +10,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { useI18n } from "@/i18n/I18nContext"
 import results from "@/data/s01-results.json"
 import communityAwards from "@/data/s01-community-awards.json"
+
+const FlightReplay = lazy(() => import("@/components/replay/FlightReplay"))
 
 const MODES = ["overall", "Autopilot", "Copilot", "human"] as const
 type Mode = typeof MODES[number]
@@ -19,6 +23,7 @@ export function S01Leaderboard() {
   const c = t.season1Results
   const [mode, setMode] = useState<Mode>("overall")
   const [query, setQuery] = useState("")
+  const [openFlight, setOpenFlight] = useState<string | null>(null)
   const count = (value: number) => value.toLocaleString(lang === "zh" ? "zh-CN" : "en-US")
   const needle = query.trim().toLocaleLowerCase()
   const visible = results.ranking.filter(row =>
@@ -71,6 +76,8 @@ export function S01Leaderboard() {
       </div>
       ))}
 
+      <ScoringDownload />
+
       <Tabs value={mode} onValueChange={value => setMode(value as Mode)}>
         <TabsList className="max-w-full flex-wrap justify-start">
           {MODES.map(key => (
@@ -97,13 +104,19 @@ export function S01Leaderboard() {
                 </TableRow></TableHeader>
                 <TableBody>
                   {visible.map(row => (
-                    <TableRow key={row.submissionId} data-submission-id={row.submissionId} className={row.rank <= 3 ? "bg-crimson/5" : ""}>
+                    <Fragment key={row.submissionId}>
+                    <TableRow data-submission-id={row.submissionId} className={row.rank <= 3 ? "bg-crimson/5" : ""}>
                       <TableCell className="align-top pt-5 font-pixel text-lg text-ba-orange">{String(row.rank).padStart(2, "0")}</TableCell>
                       <TableCell className="w-64 min-w-60 max-w-72 whitespace-normal py-5">
                         <p className="font-bold text-paper">{row.team}</p>
                         <a href={row.url} target="_blank" rel="noopener noreferrer" className={`mt-1 block text-xs leading-relaxed text-cyan underline decoration-cyan/30 underline-offset-4 hover:text-paper ${focus}`}>
                           {row.title} <ExternalLink className="inline size-3" aria-hidden="true" />
                         </a>
+                        <button type="button" aria-expanded={openFlight === row.submissionId} aria-controls={`flight-${key}-${row.submissionId.split("_")[0]}`}
+                          onClick={() => setOpenFlight(openFlight === row.submissionId ? null : row.submissionId)}
+                          className={`mt-3 inline-flex min-h-10 items-center gap-2 border border-cyan/30 bg-space-900/60 px-3 text-[11px] uppercase tracking-wide text-cyan hover:border-cyan hover:text-paper ${focus}`}>
+                          <Orbit className="size-3.5" aria-hidden="true" />{openFlight === row.submissionId ? c.replay.close : c.replay.open}<ChevronDown className={`size-3 ${openFlight === row.submissionId ? "rotate-180" : ""}`} aria-hidden="true" />
+                        </button>
                       </TableCell>
                       <TableCell>
                         <p className="font-bold text-paper">{fixed(row.finalScore)}{row.rawFinalScore < 0 && <span className="ml-1 text-xs font-normal text-mist">({fixed(row.rawFinalScore)})</span>}</p>
@@ -118,6 +131,16 @@ export function S01Leaderboard() {
                       <TableCell><p>−{fixed(row.errorDeduction)}</p><p className="mt-1 text-xs text-mist">{row.failed}/{row.operations} {c.failed}</p></TableCell>
                       <TableCell><Badge variant={row.mode === "Autopilot" ? "secondary" : "outline"}>{row.mode}</Badge><p className="mt-1 text-xs text-mist">×{row.mode === "Autopilot" ? "1.15" : "1"}</p></TableCell>
                     </TableRow>
+                    {openFlight === row.submissionId && <TableRow className="hover:bg-transparent">
+                      <TableCell colSpan={headers.length} className="whitespace-normal p-0">
+                        <div id={`flight-${key}-${row.submissionId.split("_")[0]}`} className="sticky left-0 w-[calc(100vw-52px)] max-w-full p-3 md:w-[min(1180px,calc(100vw-76px))] md:p-5">
+                          <ReplayBoundary message={c.replay.moduleError}><Suspense fallback={<p role="status" className="p-8 text-sm text-mist">{c.replay.loading}</p>}>
+                            <FlightReplay submissionId={row.submissionId} title={row.title} />
+                          </Suspense></ReplayBoundary>
+                        </div>
+                      </TableCell>
+                    </TableRow>}
+                    </Fragment>
                   ))}
                   {visible.length === 0 && <TableRow><TableCell colSpan={headers.length} className="whitespace-normal p-8 text-center text-mist">{c.empty}</TableCell></TableRow>}
                 </TableBody>
@@ -131,6 +154,9 @@ export function S01Leaderboard() {
             {results.exhibition.map(row => <Card key={row.submissionId} className="gap-3 p-5">
               <Badge variant="outline">{c.showcase}</Badge><p className="font-bold">{row.team}</p>
               <a href={row.url} target="_blank" rel="noopener noreferrer" className={`text-sm text-cyan underline underline-offset-4 ${focus}`}>{row.title} <ExternalLink className="inline size-3" aria-hidden="true" /></a>
+              <button className={`min-h-10 border border-cyan/30 px-3 text-left text-xs uppercase text-cyan ${focus}`} aria-expanded={openFlight === row.submissionId}
+                onClick={() => setOpenFlight(openFlight === row.submissionId ? null : row.submissionId)}>{openFlight === row.submissionId ? c.replay.close : c.replay.open}</button>
+              {openFlight === row.submissionId && <ReplayBoundary message={c.replay.moduleError}><Suspense fallback={<p role="status">{c.replay.loading}</p>}><FlightReplay submissionId={row.submissionId} title={row.title} /></Suspense></ReplayBoundary>}
             </Card>)}
           </div>
         </TabsContent>

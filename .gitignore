@@ -38,3 +38,25 @@ pnpm-debug.log*
 
 # Internal feedback notes (not part of the site)
 BuildArena v2.0 web端意见汇总/
+
+# Private scoring development belongs outside this public website repository.
+# Only the approved runtime ZIP is published under web/public/downloads/s01/.
+/web/scripts/package-s01-source.py
+/web/scripts/export-s01-trajectories.py
+/.buildarena-s01/
+/score.py
+/scorer/
+/tests/
+/examples/
+/rules/
+/raw_submissions/
+/evidence/
+/results/
+/web/score.py
+/web/scorer/
+/web/tests/
+/web/examples/
+/web/rules/
+/web/raw_submissions/
+/web/evidence/
+/web/results/
