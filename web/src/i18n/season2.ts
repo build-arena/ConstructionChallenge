@@ -465,7 +465,7 @@ const en: Content = {
       "key": "icml2026paper"
     }
   ],
-  "copyright": "© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University · Uniforce AI"
+  "copyright": "© 2026 Uniforce AI · AI for Scientific Simulation and Discovery Lab, Westlake University"
 },
 }
 
@@ -934,7 +934,7 @@ const zh: Content = {
       "key": "besiege"
     }
   ],
-  "copyright": "© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University · Uniforce AI"
+  "copyright": "© 2026 原力引擎(上海)智能科技有限公司 · AI for Scientific Simulation and Discovery Lab, Westlake University"
 },
 }
 
