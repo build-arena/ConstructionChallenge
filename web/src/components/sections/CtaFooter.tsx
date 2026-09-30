@@ -84,10 +84,45 @@ export function CtaFooter() {
             {o.tag}
           </p>
 
-          {/* ── Organizer: school (left) | lab (right) ── */}
+          {/* Hosts: Uniforce AI first, followed by the university and lab */}
           <p className="mb-4 font-pixel text-[0.85rem] uppercase tracking-widest text-steel">
             {o.organizerTitle}
           </p>
+          {/* First host */}
+          <div className="mb-8 flex flex-col gap-px border-2 border-white/10">
+            {o.hosts.map((host) => (
+              <div
+                key={host.name}
+                className="flex flex-col gap-3 bg-secondary/20 p-6 lg:flex-row lg:items-center lg:gap-10"
+              >
+                {/* Text logo */}
+                <div className="min-w-0 lg:w-2/5 lg:shrink-0">
+                  <span className="block break-words text-2xl font-black uppercase leading-snug tracking-tight text-white sm:text-3xl">
+                    {host.name}
+                  </span>
+                  <p className="mt-1 text-[0.7rem] uppercase tracking-widest text-cyan">
+                    {host.tagline}
+                  </p>
+                </div>
+                <div className="h-px w-full bg-white/10 lg:h-10 lg:w-px lg:shrink-0" />
+                <p className="text-sm leading-relaxed text-mist">
+                  {host.intro}
+                </p>
+                {host.website ? (
+                  <a
+                    href={host.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-auto shrink-0 inline-flex items-center gap-1.5 text-xs text-cyan transition-colors hover:text-crimson-bright"
+                  >
+                    <ExternalLink className="size-3" />
+                    {host.website}
+                  </a>
+                ) : null}
+              </div>
+            ))}
+          </div>
+
           <div className="mb-8 grid gap-px border-2 border-white/10 sm:grid-cols-2">
             {/* Left — Westlake University */}
             <div className="flex flex-col gap-4 bg-secondary/20 p-6">
@@ -153,44 +188,6 @@ export function CtaFooter() {
                 {o.organizer.website}
               </a>
             </div>
-          </div>
-
-          {/* ── Sponsors: full-width ── */}
-          <p className="mb-4 font-pixel text-[0.85rem] uppercase tracking-widest text-steel">
-            {o.sponsorTitle}
-          </p>
-          <div className="mb-8 flex flex-col gap-px border-2 border-white/10">
-            {o.sponsors.map((sponsor) => (
-              <div
-                key={sponsor.name}
-                className="flex flex-col gap-3 bg-secondary/20 p-6 sm:flex-row sm:items-center sm:gap-10"
-              >
-                {/* Text logo */}
-                <div className="shrink-0">
-                  <span className="font-pixel text-3xl font-black uppercase tracking-tight text-white leading-none">
-                    {sponsor.name}
-                  </span>
-                  <p className="mt-1 text-[0.7rem] uppercase tracking-widest text-cyan">
-                    {sponsor.tagline}
-                  </p>
-                </div>
-                <div className="h-px w-full bg-white/10 sm:h-10 sm:w-px sm:shrink-0" />
-                <p className="text-sm leading-relaxed text-mist">
-                  {sponsor.intro}
-                </p>
-                {sponsor.website ? (
-                  <a
-                    href={sponsor.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ml-auto shrink-0 inline-flex items-center gap-1.5 text-xs text-cyan transition-colors hover:text-crimson-bright"
-                  >
-                    <ExternalLink className="size-3" />
-                    {sponsor.website}
-                  </a>
-                ) : null}
-              </div>
-            ))}
           </div>
 
           {/* ── Sponsorship CTA ── */}

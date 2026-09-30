@@ -2,6 +2,8 @@ import type { LinkKey } from "@/config/links"
 
 export type Lang = "en" | "zh"
 
+type Organization = { name: string; tagline: string; intro: string; website: string; logo: string }
+
 const en = {
   season1Results: {
     download: {
@@ -438,7 +440,7 @@ const en = {
   organizers: {
     tag: "// 09 — Organizers & Sponsors",
     title: "Organizers & Sponsors",
-    organizerTitle: "Organizer",
+    organizerTitle: "Hosts",
     organizer: {
       name: "AI for Scientific Simulation and Discovery Lab",
       affiliation: "Westlake University",
@@ -451,8 +453,7 @@ const en = {
       labLogo: "site_assets/lab_logo.png",
       schoolLogo: "site_assets/westlake_logo.png",
     },
-    sponsorTitle: "Sponsor",
-    sponsors: [
+    hosts: [
       {
         name: "Uniforce AI",
         tagline: "AI for Engineering beyond limits",
@@ -462,6 +463,8 @@ const en = {
         logo: "",
       },
     ],
+    sponsorTitle: "Sponsor",
+    sponsors: [] as Organization[],
     sponsorshipTitle: "Become a Sponsor",
     sponsorshipBody:
       "BuildArena is an open academic challenge bridging AI research and mechanical engineering simulation.\nIf your organization is interested in co-sponsoring a future season, featuring your brand, we'd love to hear from you.\nAll sponsorships will be used for prize and maintenance.",
@@ -502,7 +505,7 @@ const en = {
       { label: "ICML 2026 Paper", key: "icml2026paper" as LinkKey },
     ],
     copyright:
-      "© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University · Uniforce AI",
+      "© 2026 Uniforce AI · AI for Scientific Simulation and Discovery Lab, Westlake University",
   },
 }
 
@@ -668,7 +671,7 @@ const zh: Content = {
     hooksTitle: "为什么是这个主题？",
     hooks: [
       { title: "巴斯光年", body: "致敬《玩具总动员》" },
-      { title: "Uniforce AI", body: "AI 工程应用的无限可能" },
+      { title: "原力引擎(上海)智能科技有限公司", body: "AI 工程应用的无限可能" },
       { title: "The Broken Beyond", body: "Besiege 的全新 DLC" },
     ],
   },
@@ -942,17 +945,18 @@ const zh: Content = {
       labLogo: "site_assets/lab_logo.png",
       schoolLogo: "site_assets/westlake_logo.png",
     },
-    sponsorTitle: "赞助商",
-    sponsors: [
+    hosts: [
       {
-        name: "Uniforce AI",
+        name: "原力引擎(上海)智能科技有限公司",
         tagline: "AI for Engineering beyond limits",
         intro:
-          "Uniforce AI 致力于利用先进 AI 技术加速工业设计与生产，让工程设计更智能、更高效。",
+          "原力引擎(上海)智能科技有限公司 致力于利用先进 AI 技术加速工业设计与生产，让工程设计更智能、更高效。",
         website: "",
         logo: "",
       },
     ],
+    sponsorTitle: "赞助商",
+    sponsors: [] as Organization[],
     sponsorshipTitle: "赞助合作",
     sponsorshipBody:
       "BuildArena 是连接 AI 研究与机械工程仿真的开放学术竞赛。\n如果您的机构有意向共同赞助未来赛季、进行品牌展示，欢迎联系我们。\n所有赞助均会用于比赛奖金和维护。",
@@ -993,7 +997,7 @@ const zh: Content = {
       { label: "Besiege", key: "besiege" as LinkKey },
     ],
     copyright:
-      "© 2026 AI for Scientific Simulation and Discovery Lab, Westlake University · Uniforce AI",
+      "© 2026 原力引擎(上海)智能科技有限公司 · AI for Scientific Simulation and Discovery Lab, Westlake University",
   },
 }
 
